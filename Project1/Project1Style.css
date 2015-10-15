@@ -1,0 +1,52 @@
+﻿body 
+{
+    font-family:sans-serif;
+
+}
+
+.jumbotron 
+{
+    background-image: url('http://www.extremetech.com/wp-content/uploads/2013/02/tesla-model-s-sunset-640x353.jpg');
+    background-repeat:no-repeat;
+    background-size: cover;
+    height: 24%;
+    width: 93%;  
+}
+
+.prettyForm 
+{
+    background-color:#00CCFF;
+}
+
+.contactInfo 
+{
+    background-color: ButtonFace;
+}
+
+.sidePanel 
+{
+    background-color: ButtonFace;
+    height: 289px;
+    width: 172px;
+}
+
+h1 
+{
+     text-align: center;
+}
+
+.twoBoxes div
+{
+    border-color: black;
+}
+
+form1 
+{
+    position:relative;
+}
+
+.errorMessage 
+{
+    text-align:center;
+    color: red;
+}
