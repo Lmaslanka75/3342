@@ -24,24 +24,18 @@
 
     <div class ="top">
     
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <br />
     
         <asp:Label ID="lblStudentID" runat="server" Text="Student ID:"></asp:Label>
         &nbsp;<asp:TextBox ID="txtstudentID" runat="server"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Label ID="lblSchool" runat="server" Text="School"></asp:Label>
-        &nbsp;<asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="btnEnter" runat="server" Text="Enter" Width="107px" position ="absolute" OnClick="btnEnter_Click"/>
-        <br />
-        <br />
+        &nbsp;&nbsp;
         <asp:Label ID="lblStudentName" runat="server" Text="Student Name:"></asp:Label>
         &nbsp;<asp:TextBox ID="txtstudentName" runat="server"></asp:TextBox>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Label ID="lblFieldOfStudy" runat="server" Text="Field of Study"></asp:Label>
-        &nbsp;<asp:TextBox ID="txtFieldOfStudy" runat="server"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="btnAddNewStudent" runat="server" Text="New Student" position="absolute" OnClick="btnAddNewStudent_Click" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="lblFieldOfStudy" runat="server" Text="Field of Study"></asp:Label><asp:TextBox ID="txtFieldOfStudy" runat="server"></asp:TextBox>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+        <br/><asp:Button ID="btnAddNewStudent" runat="server" Text="New Student" position="absolute" OnClick="btnAddNewStudent_Click" />
+        &nbsp;<asp:Button ID="btnEnter" runat="server" Text="Enter" Width="107px" position ="absolute" OnClick="btnEnter_Click"/>
         <br />
     </div>
 
@@ -75,7 +69,7 @@
                     <asp:DropDownList ID="ddlDepartment" runat="server" OnSelectedIndexChanged="ddlDepartment_SelectedIndexChanged" AutoPostBack="True">
                     </asp:DropDownList>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-                    <asp:DropDownList ID="ddlCourseTitle" runat="server">
+                    <asp:DropDownList ID="ddlCourseTitle" runat="server" OnSelectedIndexChanged="ddlCourseTitle_SelectedIndexChanged" AutoPostBack="True">
                     </asp:DropDownList>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:DropDownList ID="ddlSection" runat="server" Height="16px">

@@ -201,5 +201,10 @@ namespace UtilitiesLibrary
             //myConnectionSql.Close();
         }
 
+
+        public object GetDataSetUsingCmdObj(DBConnect dbobj)
+        {
+            throw new NotImplementedException();
+        }
     }   // end class
 }   // end namespace

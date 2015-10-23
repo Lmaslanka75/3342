@@ -21,12 +21,13 @@ h1
 .top
  {
     position:absolute;
+    display:inline;
     text-align:center;
     margin-left: 80px;
     top: 111px;
-     left:102px;
+     left:79px;
      height: 116px;
-      width:759px;
+      width:822px;
 
 }
 
