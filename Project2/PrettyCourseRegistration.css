@@ -26,8 +26,8 @@ h1
     margin-left: 80px;
     top: 111px;
      left:79px;
-     height: 116px;
-      width:822px;
+     height: 132px;
+      width:834px;
 
 }
 
@@ -76,4 +76,9 @@ DropDownList .register
 {
     width:77px;
     height:22px;
+}
+
+TextBox .personalInfo 
+{
+    display: inline;
 }
