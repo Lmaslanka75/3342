@@ -1,0 +1,78 @@
+﻿body {    height: 645px;
+    width: 999px;
+}
+
+h1 
+{
+    text-align:center;
+}
+
+.sidePanel 
+{
+    width: 82px;
+    float:left;
+    top: 103px;
+    left: 27px;
+    width: 76px;
+    height: 223px;
+    position:absolute;
+}
+
+.top
+ {
+    position:absolute;
+    text-align:center;
+    margin-left: 80px;
+    top: 111px;
+     left:102px;
+     height: 116px;
+      width:759px;
+
+}
+
+#DropDownList .register 
+{
+    
+}
+
+.register 
+{
+   position:absolute;
+   text-align:center;
+    margin-left: 80px;
+    top: 160px;
+    left: 79px;
+    height: 57px;
+    width:759px;
+}
+
+.gridview 
+{
+    position:absolute;
+    clear:left;
+    top: 374px;
+    left: 151px;
+}
+
+
+#background 
+{
+    opacity:0.5;
+}
+
+.academdic 
+{
+    position:absolute;
+   text-align:center;
+}
+
+#Textbox .personalInfo 
+{
+    display:inline;
+}
+
+DropDownList .register 
+{
+    width:77px;
+    height:22px;
+}

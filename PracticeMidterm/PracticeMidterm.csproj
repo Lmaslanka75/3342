@@ -7,13 +7,13 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{4290564F-DADA-463D-A701-A88F30A2D94A}</ProjectGuid>
+    <ProjectGuid>{94D60BEC-1EB5-41C5-86ED-18EA3EFB04E5}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Project2</RootNamespace>
-    <AssemblyName>Project2</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>PracticeMidterm</RootNamespace>
+    <AssemblyName>PracticeMidterm</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -57,25 +57,16 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="frmCourseRegistration.aspx" />
-    <Content Include="frmStudentRegistration.aspx" />
-    <Content Include="PrettyCourseRegistration.css" />
+    <Content Include="frmPractice.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmCourseRegistration.aspx.cs">
-      <DependentUpon>frmCourseRegistration.aspx</DependentUpon>
+    <Compile Include="frmPractice.aspx.cs">
+      <DependentUpon>frmPractice.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="frmCourseRegistration.aspx.designer.cs">
-      <DependentUpon>frmCourseRegistration.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="frmStudentRegistration.aspx.cs">
-      <DependentUpon>frmStudentRegistration.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="frmStudentRegistration.aspx.designer.cs">
-      <DependentUpon>frmStudentRegistration.aspx</DependentUpon>
+    <Compile Include="frmPractice.aspx.designer.cs">
+      <DependentUpon>frmPractice.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -108,7 +99,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:3319/</IISUrl>
+          <IISUrl>http://localhost:49300/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
