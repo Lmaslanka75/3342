@@ -47,10 +47,10 @@
 
         
          <div class ="sidePanel">
-            <asp:Panel ID="Panel1" runat="server" Height="215px" Width="75px">
+            <asp:Panel ID="Panel1" runat="server" Height="215px" Width="99px">
                 <asp:Button ID="btnStudent" runat="server" Text="Student" OnClick="btnStudent_Click" /><br /><br />
-                <asp:Button ID="btnCreateCourse" runat="server" Text="Create Course" OnClick="Button7_Click" /> <br /><br />
-                <asp:Button ID="Button2" runat="server" Text="Button" OnClick="Button2_Click" /> 
+                <asp:Button ID="btnCreateCourse" runat="server" Text="Add Course" OnClick="Button7_Click" /> <br /><br />
+                <asp:Button ID="Button2" runat="server" Text="Register" OnClick="Button2_Click" /> 
                 <br />
                 <br />
                 <asp:Button ID="btnTutition" runat="server" Text="Tutition" OnClick="Button3_Click" Width="56px" />   

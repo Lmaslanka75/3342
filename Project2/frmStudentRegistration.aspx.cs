@@ -51,7 +51,7 @@ namespace Project2
             inputParameter.SqlDbType = SqlDbType.VarChar;
             inputParameter.Size = 200; 
             sqlCommand.Parameters.Add(inputParameter);
-            DataSet myDataSet = dbobj.GetDataSetUsingCmdObj(sqlCommand);
+            dbobj.DoUpdateUsingCmdObj(sqlCommand);
 
 
             //Commands to display the gridview 
@@ -65,10 +65,10 @@ namespace Project2
             objCommand.Parameters.Add(inputParm);
 
             //Update DB with new values
-            dbobj.DoUpdateUsingCmdObj(sqlCommand);
-            //DataSet ds = dbobj.GetDataSetUsingCmdObj(objCommand);
+            //dbobj.DoUpdateUsingCmdObj(sqlCommand);
+            DataSet ds = dbobj.GetDataSetUsingCmdObj(objCommand);
             //bind to gridview
-            gvNewStudent.DataSource = myDataSet;
+            gvNewStudent.DataSource = ds;
             gvNewStudent.DataBind();
         }
 

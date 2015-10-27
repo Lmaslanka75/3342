@@ -1,5 +1,5 @@
 ﻿body {    height: 645px;
-    width: 999px;
+    width: 1150px;
 }
 
 h1 
@@ -11,10 +11,10 @@ h1
 {
     width: 82px;
     float:left;
-    top: 103px;
+    top: 84px;
     left: 27px;
-    width: 76px;
-    height: 223px;
+    width: 102px;
+    height: 242px;
     position:absolute;
 }
 
@@ -28,7 +28,6 @@ h1
      left:79px;
      height: 156px;
       width:836px;
-
 }
 
 #DropDownList .register 
@@ -87,6 +86,16 @@ TextBox .personalInfo
 .floating-box {
     float: left;
     width: 308px;
-    height: 39px;
+    height: 38px;
     margin: 5px;  
+}
+
+.inputArea 
+{
+    float:right;
+    height: 232px; 
+    width: 1007px;
+    margin-left: 104px;
+    margin-bottom:5px;
+
 }

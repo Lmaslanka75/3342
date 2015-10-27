@@ -9,6 +9,9 @@
         .floating-box {
             width: 291px;
         }
+        #form1 {
+            height: 752px;
+        }
     </style>
 </head>
 <link href="PrettyCourseRegistration.css" rel="stylesheet" />
@@ -16,8 +19,9 @@
     <form id="form1" runat="server">
     <h1>Add A New Course
     </h1>
-        <div style="height: 699px">
-        <div style="height: 383px; margin-top: 0px; width: 1005px;">
+        <div class ="inputArea">
+
+        
              <br />
             <div class ="floating-box">
             <asp:Label ID="lblCRN" runat="server" Text="CRN"></asp:Label>
@@ -86,8 +90,15 @@
             <asp:TextBox ID="txtNumberOfSeatsAvailable" runat="server"></asp:TextBox>
             <br />
             </div>
-            
-  
-    </form>
+            <div class="floating-box">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="btnAddCourse" runat="server" position ="absolute" Text="Add Course" Width="169px" Height="36px"  />
+             </div>
+        </div>
+       
+            <div style="height: 212px; width: 1156px">
+            <asp:GridView ID="GridView1" runat="server" Height="136px" Width="248px"></asp:GridView>
+            </div>
+            </form>
 </body>
 </html>
