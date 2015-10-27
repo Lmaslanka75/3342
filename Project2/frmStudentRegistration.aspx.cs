@@ -18,6 +18,7 @@ namespace Project2
         protected void Page_Load(object sender, EventArgs e)
         {
 
+
         }
 
       //method used to add a new student to the Database
@@ -42,7 +43,7 @@ namespace Project2
             inputParameter = new SqlParameter("@Name", studentName);
             inputParameter.Direction = ParameterDirection.Input;
             inputParameter.SqlDbType = SqlDbType.VarChar;
-            inputParameter.Size = 200; 
+            inputParameter.Size = 50; 
             sqlCommand.Parameters.Add(inputParameter);
 
             inputParameter = new SqlParameter("@FieldOfStudy", fieldOfStudy);
@@ -50,9 +51,8 @@ namespace Project2
             inputParameter.SqlDbType = SqlDbType.VarChar;
             inputParameter.Size = 200; 
             sqlCommand.Parameters.Add(inputParameter);
-            
-            //Update DB with new values
-            dbobj.DoUpdateUsingCmdObj(sqlCommand);
+            DataSet myDataSet = dbobj.GetDataSetUsingCmdObj(sqlCommand);
+
 
             //Commands to display the gridview 
             objCommand.CommandType = CommandType.StoredProcedure;
@@ -61,14 +61,15 @@ namespace Project2
             SqlParameter inputParm = new SqlParameter("@StudentID", StudentID);
             inputParm.Direction = ParameterDirection.Input;
             inputParm.SqlDbType = SqlDbType.Int;
-            inputParm.Size = 4;
+            inputParm.Size = 32;
             objCommand.Parameters.Add(inputParm);
 
-            DataSet ds;
-            ds = dbobj.GetDataSetUsingCmdObj(objCommand);
+            //Update DB with new values
+            dbobj.DoUpdateUsingCmdObj(sqlCommand);
 
+            //DataSet ds = dbobj.GetDataSetUsingCmdObj(objCommand);
             //bind to gridview
-            gvNewStudent.DataSource = ds;
+            gvNewStudent.DataSource = myDataSet;
             gvNewStudent.DataBind();
 
 
@@ -84,7 +85,6 @@ namespace Project2
 
         public int getStudentCount() 
         {
-
             //Creating a Primary key based on the total entries in current DB
             SqlCommand countCommand = new SqlCommand();
             countCommand.CommandType = CommandType.StoredProcedure;
