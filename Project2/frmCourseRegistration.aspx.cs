@@ -56,9 +56,6 @@ namespace Project2
             sqlCommand.CommandType = CommandType.StoredProcedure;
             sqlCommand.CommandText = "GetCourseTitle";
             sqlCommand.Parameters.AddWithValue("@selectedDepartment", selectedDepartment);
-
-
-
             ddlDepartment.DataSource = dbobj.GetDataSetUsingCmdObj(sqlCommand);
             // ddlDepartment.DataSource = dbobj.GetDataSet(departmentQuery);
             ddlDepartment.DataTextField = "DepartmentID";
@@ -67,33 +64,22 @@ namespace Project2
         }
 
 
-        protected void Button7_Click(object sender, EventArgs e)
-        {
-        }
-        protected void Button2_Click(object sender, EventArgs e)
-        {
-        }
-        protected void Button3_Click(object sender, EventArgs e)
-        {
-        }
-        protected void Button4_Click(object sender, EventArgs e)
-        {
-        }
         protected void btnAddNewStudent_Click(object sender, EventArgs e)
         {
 
             Response.Redirect("frmStudentRegistration.aspx");
         }
+
+
         protected void btnEnter_Click(object sender, EventArgs e)
         {   
             //local variables for new user
             int studentID = int.Parse(txtstudentID.Text);
             string studentName = txtstudentName.Text;
             string fieldOfStudy = txtFieldOfStudy.Text;
-
             //DBConnect object
             DBConnect dbobj = new DBConnect();
-
+//good code
             //Database Updates
             SqlCommand sqlCommand = new SqlCommand();
             sqlCommand.CommandType = CommandType.StoredProcedure;
@@ -104,28 +90,44 @@ namespace Project2
 
             dbobj.DoUpdateUsingCmdObj(sqlCommand);
 
-
-
-
-
-            
-            
-
+    //bad code
             //SqlCommand objCommand = new SqlCommand();
             //objCommand.CommandType = CommandType.StoredProcedure;
             //objCommand.CommandText = "GetRentalCarAgencies";
             //objCommand.Parameters.AddWithValue("@city", city);
             //objCommand.Parameters.AddWithValue("@state", state);
-
             //DBConnect objDB = new DBConnect();
-            //return objDB.GetDataSetUsingCmdObj(objCommand);
-
-
+            //return objDB.GetDataSetUsingCmdObj(objCommand);        
         }
+
 
         protected void ddlCourseTitle_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+
+        }
+
+        //search for students
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            //local variables for new user
+            int studentID = int.Parse(txtstudentID.Text);
+            string studentName = txtstudentName.Text;
+            string fieldOfStudy = txtFieldOfStudy.Text;
+
+            //stored procedure
+            SqlCommand objCommand = new SqlCommand();
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "searchStudents";      //MUST ADD THIS STORED PROCEDURE!!! " searchStudents
+
+
+
+
+
+        }
+
+        protected void btnStudent_Click(object sender, EventArgs e)
+        {
 
         }
     }

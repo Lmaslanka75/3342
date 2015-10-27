@@ -94,6 +94,15 @@ namespace Project2 {
         protected global::System.Web.UI.WebControls.Button btnSearch;
         
         /// <summary>
+        /// lblSearchErrorOutput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSearchErrorOutput;
+        
+        /// <summary>
         /// Panel1 control.
         /// </summary>
         /// <remarks>
@@ -103,13 +112,13 @@ namespace Project2 {
         protected global::System.Web.UI.WebControls.Panel Panel1;
         
         /// <summary>
-        /// Button1 control.
+        /// btnStudent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnStudent;
         
         /// <summary>
         /// Button7 control.

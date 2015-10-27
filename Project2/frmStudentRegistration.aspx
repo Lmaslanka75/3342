@@ -21,10 +21,17 @@
     <div>
         <h1>Student Registration</h1>
         </div>
-
+        <div> 
+            <asp:SiteMapPath ID="SiteMapPath1" runat="server" Font-Names="Verdana" Font-Size="0.8em" PathSeparator=" : ">
+                <CurrentNodeStyle ForeColor="#333333" />
+                <NodeStyle Font-Bold="True" ForeColor="#990000" />
+                <PathSeparatorStyle Font-Bold="True" ForeColor="#990000" />
+                <RootNodeStyle Font-Bold="True" ForeColor="#FF8000" />
+            </asp:SiteMapPath>
+        </div>
          <div class="personalInfo">
                   <asp:Label ID="Label5" runat="server" Text="StudentID: "></asp:Label>
-            <asp:TextBox ID="txtstudentID" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtstudentID" runat="server" ReadOnly="True"></asp:TextBox>
             <br />
             <asp:Label ID="Label6" runat="server" Text="Name: "></asp:Label>
             <asp:TextBox ID="txtstudentName" runat="server" OnTextChanged="txtstudentName_TextChanged"></asp:TextBox>
@@ -36,6 +43,16 @@
                   <asp:Button ID="btnAddNewStudent" runat="server" OnClick="btnAddNewStudent_Click" Text="Add New Student" />
         </div>
 
+
+
+
+        <asp:GridView ID="gvNewStudent" runat="server" Height="89px" Width="746px">
+        </asp:GridView>
+
+
+
+
+        <br /><br /><br /><br /><br /><br />
         <div class="academicInfo">
              <br />
             <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
