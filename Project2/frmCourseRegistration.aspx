@@ -97,5 +97,7 @@
          </div>
 
     </form>
+    <p>
+        <a href="frmCourseRegistration.aspx">frmCourseRegistration.aspx</a></p>
 </body>
 </html>

@@ -22,12 +22,6 @@
         <h1>Student Registration</h1>
         </div>
         <div> 
-            <asp:SiteMapPath ID="SiteMapPath1" runat="server" Font-Names="Verdana" Font-Size="0.8em" PathSeparator=" : ">
-                <CurrentNodeStyle ForeColor="#333333" />
-                <NodeStyle Font-Bold="True" ForeColor="#990000" />
-                <PathSeparatorStyle Font-Bold="True" ForeColor="#990000" />
-                <RootNodeStyle Font-Bold="True" ForeColor="#FF8000" />
-            </asp:SiteMapPath>
         </div>
          <div class="personalInfo">
                   <asp:Label ID="Label5" runat="server" Text="StudentID: "></asp:Label>
@@ -46,7 +40,12 @@
 
 
 
-        <asp:GridView ID="gvNewStudent" runat="server" Height="89px" Width="746px">
+        <asp:GridView ID="gvNewStudent" runat="server" AutoGenerateColumns="False" Height="89px" Width="746px">
+            <Columns>
+                <asp:BoundField HeaderText="StudentID" />
+                <asp:BoundField HeaderText="Student Name" />
+                <asp:BoundField HeaderText="Field Of Study" />
+            </Columns>
         </asp:GridView>
 
 
