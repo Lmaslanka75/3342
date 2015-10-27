@@ -57,12 +57,20 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="frmAddCourse.aspx" />
     <Content Include="frmCourseRegistration.aspx" />
     <Content Include="frmStudentRegistration.aspx" />
     <Content Include="PrettyCourseRegistration.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAddCourse.aspx.cs">
+      <DependentUpon>frmAddCourse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmAddCourse.aspx.designer.cs">
+      <DependentUpon>frmAddCourse.aspx</DependentUpon>
+    </Compile>
     <Compile Include="frmCourseRegistration.aspx.cs">
       <DependentUpon>frmCourseRegistration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

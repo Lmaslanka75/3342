@@ -37,7 +37,7 @@
         <br/>
         <br />
         <br />
-        <asp:Button ID="btnAddNewStudent" runat="server" Text="New Student" position="absolute" OnClick="btnAddNewStudent_Click" />
+        <asp:Button ID="btnAddNewStudent" runat="server" Text="Add New Student" position="absolute" OnClick="btnAddNewStudent_Click" />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Button ID="btnSearch" runat="server" Text="Search" Width="107px" position ="absolute" OnClick="btnSearch_Click"/>
         <br />
         <asp:Label ID="lblSearchErrorOutput" runat="server"></asp:Label>
@@ -49,7 +49,7 @@
          <div class ="sidePanel">
             <asp:Panel ID="Panel1" runat="server" Height="215px" Width="75px">
                 <asp:Button ID="btnStudent" runat="server" Text="Student" OnClick="btnStudent_Click" /><br /><br />
-                <asp:Button ID="Button7" runat="server" Text="Button" OnClick="Button7_Click" /> <br /><br />
+                <asp:Button ID="btnCreateCourse" runat="server" Text="Create Course" OnClick="Button7_Click" /> <br /><br />
                 <asp:Button ID="Button2" runat="server" Text="Button" OnClick="Button2_Click" /> 
                 <br />
                 <br />
@@ -88,9 +88,6 @@
              </div>
         
         <div class ="gridview">
-
-            <asp:GridView ID="GridView1" runat="server">
-            </asp:GridView>
 
          &nbsp;&nbsp;&nbsp;
 

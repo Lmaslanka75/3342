@@ -66,23 +66,16 @@ namespace Project2
 
             //Update DB with new values
             dbobj.DoUpdateUsingCmdObj(sqlCommand);
-
             //DataSet ds = dbobj.GetDataSetUsingCmdObj(objCommand);
             //bind to gridview
             gvNewStudent.DataSource = myDataSet;
             gvNewStudent.DataBind();
-
-
-
-            //show student entry in grid view
-           // showNewStudent(StudentID);
         }
 
         protected void txtstudentName_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         public int getStudentCount() 
         {
             //Creating a Primary key based on the total entries in current DB

@@ -130,5 +130,12 @@ namespace Project2
         {
 
         }
+
+        protected void Button7_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frmAddCourse.aspx");
+        }
+
+
     }
 }
