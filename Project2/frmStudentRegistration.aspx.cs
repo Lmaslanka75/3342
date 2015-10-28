@@ -18,7 +18,6 @@ namespace Project2
         protected void Page_Load(object sender, EventArgs e)
         {
 
-
         }
 
       //method used to add a new student to the Database
@@ -53,7 +52,7 @@ namespace Project2
             sqlCommand.Parameters.Add(inputParameter);
             dbobj.DoUpdateUsingCmdObj(sqlCommand);
 
-
+            objCommand = new SqlCommand();
             //Commands to display the gridview 
             objCommand.CommandType = CommandType.StoredProcedure;
             objCommand.CommandText = "ShowNewStudentEntry"; //my stored procedure
@@ -64,12 +63,15 @@ namespace Project2
             inputParm.Size = 32;
             objCommand.Parameters.Add(inputParm);
 
+
+            showNewStudent(StudentID);
+
             //Update DB with new values
             //dbobj.DoUpdateUsingCmdObj(sqlCommand);
-            DataSet ds = dbobj.GetDataSetUsingCmdObj(objCommand);
+           // DataSet ds = dbobj.GetDataSetUsingCmdObj(objCommand);
             //bind to gridview
-            gvNewStudent.DataSource = ds;
-            gvNewStudent.DataBind();
+            //gvNewStudent.DataSource = ds;
+            //gvNewStudent.DataBind();
         }
 
         protected void txtstudentName_TextChanged(object sender, EventArgs e)
@@ -102,12 +104,8 @@ namespace Project2
             
             objCommand.CommandType = CommandType.StoredProcedure;
             objCommand.CommandText = "ShowNewStudentEntry"; //my stored procedure
-            
-            SqlParameter inputParm = new SqlParameter("@StudentID", studentid);
-            inputParm.Direction = ParameterDirection.Input;
-            inputParm.SqlDbType = SqlDbType.Int;
-            inputParm.Size = 4;
-            objCommand.Parameters.Add(inputParm);
+
+            objCommand.Parameters.AddWithValue("@StudentID", studentid);
 
             DataSet ds;
             ds = dbobj.GetDataSetUsingCmdObj(objCommand);
@@ -115,6 +113,26 @@ namespace Project2
             //bind to gridview
             gvNewStudent.DataSource = ds;
             gvNewStudent.DataBind();
+        }
+
+        protected void Button7_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frmAddCourse.aspx");
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frmCourseRegistration.apsx");
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnStudent_Click(object sender, EventArgs e)
+        {
+
         }
 
 

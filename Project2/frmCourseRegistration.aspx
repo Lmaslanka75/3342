@@ -10,16 +10,30 @@
             width: 686px;
         }
         #form1 {
-            height: 706px;
-            width: 1007px;
+            height: 564px;
+            width: 1143px;
         }
     </style>
+     <link href="PrettyCourseRegistration.css" rel="stylesheet" />
 </head>
-    <link href="PrettyCourseRegistration.css" rel="stylesheet" />
+   
 <body>
     <form id="form1" runat="server">
         <div class ="header">
             <h1>Course Registration System</h1>
+
+        
+         <div class ="sidePanel">
+                <asp:Button ID="btnStudent" runat="server" Text="Student" OnClick="btnStudent_Click" Width="97px" /><br /><br />
+                <asp:Button ID="btnCreateCourse" runat="server" Text="Add Course" OnClick="Button7_Click" /> <br /><br />
+                <asp:Button ID="Button2" runat="server" Text="Register" OnClick="Button2_Click" Width="96px" /> 
+                <br />
+                <br />
+                <asp:Button ID="btnTutition" runat="server" Text="Tutition" OnClick="Button3_Click" Width="96px" />   
+                <br /><br />
+                  
+             </div>
+
             </div>
 
     <div class ="top">
@@ -33,30 +47,19 @@
         &nbsp;<asp:TextBox ID="txtstudentName" runat="server"></asp:TextBox>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Label ID="lblFieldOfStudy" runat="server" Text="Field of Study"></asp:Label>: <asp:TextBox ID="txtFieldOfStudy" runat="server"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-        <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <br /><br /><br /><br /><br />
+
+        <br /><asp:Button ID="btnAddNewStudent" runat="server" Text="Add New Student" position="absolute" OnClick="btnAddNewStudent_Click" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        <asp:Button ID="btnSearch" runat="server" Text="Search" Width="107px" position ="absolute" OnClick="btnSearch_Click"/>
         <br />
-        <br />
-        <asp:Button ID="btnAddNewStudent" runat="server" Text="Add New Student" position="absolute" OnClick="btnAddNewStudent_Click" />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Button ID="btnSearch" runat="server" Text="Search" Width="107px" position ="absolute" OnClick="btnSearch_Click"/>
         <br />
         <asp:Label ID="lblSearchErrorOutput" runat="server"></asp:Label>
-        <br />
         <br />
     </div>
 
         
-         <div class ="sidePanel">
-            <asp:Panel ID="Panel1" runat="server" Height="215px" Width="99px">
-                <asp:Button ID="btnStudent" runat="server" Text="Student" OnClick="btnStudent_Click" /><br /><br />
-                <asp:Button ID="btnCreateCourse" runat="server" Text="Add Course" OnClick="Button7_Click" /> <br /><br />
-                <asp:Button ID="Button2" runat="server" Text="Register" OnClick="Button2_Click" /> 
-                <br />
-                <br />
-                <asp:Button ID="btnTutition" runat="server" Text="Tutition" OnClick="Button3_Click" Width="56px" />   
-                <br /><br />
-                <asp:Button ID="Button4" runat="server" Text="Button" OnClick="Button4_Click" />
-               
                 <div class="register">
                     <asp:Label ID="lblSemestere" runat="server" Text="Semester"></asp:Label>
                     &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<asp:Label ID="lblDepartment" runat="server" Text="Department"></asp:Label>
@@ -84,17 +87,8 @@
                     </div>
                 
                
-            </asp:Panel>
-             </div>
+         
         
-        <div class ="gridview">
-
-         &nbsp;&nbsp;&nbsp;
-
-         </div>
-
     </form>
-    <p>
-        <a href="frmCourseRegistration.aspx">frmCourseRegistration.aspx</a></p>
 </body>
 </html>

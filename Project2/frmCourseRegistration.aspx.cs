@@ -44,7 +44,6 @@ namespace Project2
             ddlDepartment.DataTextField = "DepartmentID";
             ddlDepartment.DataValueField = "DepartmentID";
             ddlDepartment.DataBind();
- 
         }
 
         public void bindCourseTitle()
@@ -128,12 +127,17 @@ namespace Project2
 
         protected void btnStudent_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("frmStudentRegistration.aspx");
         }
 
         protected void Button7_Click(object sender, EventArgs e)
         {
             Response.Redirect("frmAddCourse.aspx");
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+
         }
 
 
