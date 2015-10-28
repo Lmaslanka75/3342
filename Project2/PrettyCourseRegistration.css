@@ -54,9 +54,9 @@ Button.sidePanel
     display:inline;
     text-align:center;
     margin-left: 80px;
-    top: 110px;
+    top: 103px;
      left:215px;
-     height: 182px;
+     height: 220px;
       width:812px;
 }
 
@@ -77,14 +77,14 @@ Button.sidePanel
     display:inline;
     margin-left:80px;
     clear:left;
-    top: 366px;
+    top: 420px;
     width: 66%;
     float: right;
     padding: 15px;
-    height: 252px;
+    height: 198px;
     box-sizing:border-box;
     left: 251px;
-    right: -22px;
+    right: 115px;
 }
 
 h2.gridview

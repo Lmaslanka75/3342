@@ -64,9 +64,11 @@
              </div>
 
          <div class="top">
-                  <asp:Label ID="Label5" runat="server" Text="StudentID: " Visible="False"></asp:Label>
+                  <br />
+             <h3>Create New Account:</h3>
+                  <asp:Label ID="Label5" runat="server" Text="StudentID: "></asp:Label>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="txtstudentID" runat="server" ReadOnly="True" Visible="False"></asp:TextBox>
+            <asp:TextBox ID="txtstudentID" runat="server" ReadOnly="True"></asp:TextBox>
             <br />
             <asp:Label ID="Label6" runat="server" Text="Name: "></asp:Label>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -77,9 +79,10 @@
             <asp:TextBox ID="txtFieldOfStudy" runat="server" Height="16px"></asp:TextBox>
                   <br />
             <br />
-                  <asp:Button ID="btnAddNewStudent" runat="server" OnClick="btnAddNewStudent_Click" Text="Add New Student" />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <asp:Button ID="Button3" runat="server" Height="26px" OnClick="Button3_Click1" style="margin-top: 0px" Text="View Roster" Width="139px" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <asp:Button ID="btnAddNewStudent" runat="server" OnClick="btnAddNewStudent_Click" Text="Add Student" Width="139px" />
               <br />
         </div>
 
