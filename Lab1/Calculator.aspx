@@ -7,18 +7,25 @@
     <title></title>
     <style type="text/css">
         #form1 {
-            height: 278px;
-            width: 131px;
+            height: 229px;
+            width: 103px;
         }
         .calcButton {
             width: 21px;
+            height: 42px;
+        }
+        #frmCalculator {
+            width: 109px;
+            height: 269px;
         }
     </style>
 </head>
-<body style="height: 413px; width: 355px">
-    <form id="form1" runat="server">
+<body style="height: 413px; width: 157px">
+    <form id="frmCalculator" runat="server">
 
 
+        <p style="width: 103px">  
+            &nbsp;</p>
         <p style="width: 103px">  
             <input class="button-4 calcButton" type="button" value="7" onclick="this.form.hdisp.value = this.form.disp.value; this.form.disp.value += '7'"/>
             <input class="button-4 calcButton" type="button" value="8" onclick="this.form.hdisp.value = this.form.disp.value; this.form.disp.value += '8'"/>
@@ -28,8 +35,7 @@
                <input class="button-4 calcButton" type="button" value="4" onclick="document.getElementById().value = this.form.disp.value; this.form.disp.value += '4'"/>
                <input class="button-4 calcButton" type="button" value="5" onclick="this.form.hdisp.value = this.form.disp.value; this.form.disp.value += '5'"/>
                <input class="button-4 calcButton" type="button" value="6" onclick="this.form.hdisp.value = this.form.disp.value; this.form.disp.value += '6'"/>
-                 <input class="button-4 calcButton" type="button" value=" * " onclick="this.form.hdisp.value = this.form.disp.value; this.form.disp.value += '*'"/>
-        <p style="height: 31px; width: 117px">
+                 <input class="button-4 calcButton" type="button" value=" * " onclick="this.form.hdisp.value = this.form.disp.value; this.form.disp.value += '*'"/><p style="height: 42px; width: 100px">
             <input class="button-4 calcButton" type="button" value="1" onclick="this.form.hdisp.value = this.form.disp.value; this.form.disp.value += '1'"/>
            <input class="button-4 calcButton" type="button" value="2" onclick="this.form.hdisp.value = this.form.disp.value; this.form.disp.value += '2'"/>
            <input class="button-4 calcButton" type="button" value="3" onclick="this.form.hdisp.value = this.form.disp.value; this.form.disp.value += '3'"/>
