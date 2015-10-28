@@ -17,8 +17,10 @@ namespace Project2
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            loadCourses();
-
+            if (!IsPostBack)
+            {
+                loadCourses();
+            }
         }
 
         protected void btnAddCourse_Click(object sender, EventArgs e)
