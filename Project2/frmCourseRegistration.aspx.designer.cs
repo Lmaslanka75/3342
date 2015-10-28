@@ -58,24 +58,6 @@ namespace Project2 {
         protected global::System.Web.UI.WebControls.Button btnTutition;
         
         /// <summary>
-        /// lblStudentID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStudentID;
-        
-        /// <summary>
-        /// txtstudentID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtstudentID;
-        
-        /// <summary>
         /// lblStudentName control.
         /// </summary>
         /// <remarks>
@@ -85,40 +67,13 @@ namespace Project2 {
         protected global::System.Web.UI.WebControls.Label lblStudentName;
         
         /// <summary>
-        /// txtstudentName control.
+        /// ddlStudentName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtstudentName;
-        
-        /// <summary>
-        /// lblFieldOfStudy control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFieldOfStudy;
-        
-        /// <summary>
-        /// txtFieldOfStudy control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFieldOfStudy;
-        
-        /// <summary>
-        /// btnAddNewStudent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddNewStudent;
+        protected global::System.Web.UI.WebControls.DropDownList ddlStudentName;
         
         /// <summary>
         /// btnSearch control.
@@ -128,6 +83,15 @@ namespace Project2 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSearch;
+        
+        /// <summary>
+        /// btnAddNewStudent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddNewStudent;
         
         /// <summary>
         /// lblSearchErrorOutput control.

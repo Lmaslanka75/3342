@@ -10,7 +10,7 @@
             width: 291px;
         }
         #form1 {
-            height: 752px;
+            height: 877px;
         }
     </style>
     <link href="PrettyCourseRegistration.css" rel="stylesheet" />
@@ -23,12 +23,12 @@
 
          <div class ="sidePanel">
                 <asp:Button ID="btnStudent" runat="server" Text="Student" OnClick="btnStudent_Click" style="margin-right: 4px" Width="97px" /><br /><br />
-                <asp:Button ID="btnCreateCourse" runat="server" Text="Add Course" OnClick="Button7_Click" /> <br /><br />
+                <asp:Button ID="btnCreateCourse" runat="server" Text="Add Course" OnClick="Button7_Click" style="height: 26px" /> <br /><br />
                 <asp:Button ID="Button2" runat="server" Text="Register" OnClick="Button2_Click" Width="99px" /> 
                 <br />
                 <br />
                 <asp:Button ID="btnTutition" runat="server" Text="Tutition" OnClick="Button3_Click" Width="98px" />   
-                <br /><br />
+                <br />
                  
              </div>
 
@@ -91,17 +91,20 @@
             </div>
 
             
-             <div class ="floating-box">
-            <asp:Label ID="Label3" runat="server" Text="Maximum Seats"></asp:Label>
-            <asp:TextBox ID="txtMaximumSeats" runat="server"></asp:TextBox>
-            <br />
-            </div>
-            <div class ="floating-box">
+       
+
+                        <div class ="floating-box">
             <asp:Label ID="Label8" runat="server" Text="# Seats Available"></asp:Label>
             <asp:TextBox ID="txtNumberOfSeatsAvailable" runat="server"></asp:TextBox>
             <br />
             </div>
-            <div class="floating-box">
+             <div class ="floating-box">
+            <asp:Label ID="Label3" runat="server" Text="Maximum Seats"></asp:Label>
+            <asp:TextBox ID="txtMaximumSeats" runat="server"></asp:TextBox>
+            <br />
+
+            </div>
+                 <div class="floating-box">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Button ID="btnAddCourse" runat="server" position ="absolute" Text="Add Course" Width="169px" Height="36px" OnClick="btnAddCourse_Click" OnDataBinding="Page_Load"  />
              </div>
@@ -110,20 +113,19 @@
             <div class="gridview" style="height: 344px; width: 1001px; left: 93px;">
                <h2 style="width: 1021px; height: 38px;">View All Courses</h2>
                 <br />
-            <asp:GridView ID="gvCourses" runat="server" Height="192px" Width="935px" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" OnRowDeleting="gvCourses_RowDeleting" OnSelectedIndexChanged="gvCourses_SelectedIndexChanged">
-                <AlternatingRowStyle BackColor="White" />
+            <asp:GridView ID="gvCourses" runat="server" Height="192px" Width="935px" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" ForeColor="Black" OnRowDeleting="gvCourses_RowDeleting" OnSelectedIndexChanged="gvCourses_SelectedIndexChanged" CellSpacing="2">
                 <Columns>
                     <asp:CommandField ShowDeleteButton="True" />
                 </Columns>
-                <FooterStyle BackColor="#CCCC99" />
-                <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
-                <RowStyle BackColor="#F7F7DE" />
-                <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
-                <SortedAscendingCellStyle BackColor="#FBFBF2" />
-                <SortedAscendingHeaderStyle BackColor="#848384" />
-                <SortedDescendingCellStyle BackColor="#EAEAD3" />
-                <SortedDescendingHeaderStyle BackColor="#575357" />
+                <FooterStyle BackColor="#CCCCCC" />
+                <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
+                <RowStyle BackColor="White" />
+                <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+                <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                <SortedAscendingHeaderStyle BackColor="#808080" />
+                <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                <SortedDescendingHeaderStyle BackColor="#383838" />
                 </asp:GridView>
             </div>
             </form>

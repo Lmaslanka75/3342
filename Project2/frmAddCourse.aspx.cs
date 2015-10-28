@@ -52,7 +52,7 @@ namespace Project2
             objCommand.Parameters.AddWithValue("@CreditHours", creditHours);
             objCommand.Parameters.AddWithValue("@NumberofSeatsAvailable", numberOfSeatsAvailable);
             objCommand.Parameters.AddWithValue("@MaximumSeats", maximumSeats);
-           
+
             dbobj.DoUpdateUsingCmdObj(objCommand);
 
         }
@@ -106,6 +106,9 @@ namespace Project2
             objCommand.CommandText = "DeleteCourse";
             objCommand.Parameters.AddWithValue("@CRN", selectedCRN);
             objDB.GetDataSetUsingCmdObj(objCommand);
+            objDB.DoUpdateUsingCmdObj(objCommand);
+
+            loadCourses();
         }
     }
 }

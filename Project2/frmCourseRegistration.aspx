@@ -7,7 +7,7 @@
     <title></title>  
     <style type="text/css">
         .register {
-            width: 686px;
+            width: 808px;
         }
         #form1 {
             height: 564px;
@@ -40,19 +40,19 @@
     
         <br />
     
-        <asp:Label ID="lblStudentID" runat="server" Text="Student ID:"></asp:Label>
-        &nbsp;<asp:TextBox ID="txtstudentID" runat="server"></asp:TextBox>
+        <asp:Label ID="lblStudentName" runat="server" Text="Student Name:" position="absolute"></asp:Label>
+        &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;<asp:DropDownList ID="ddlStudentName" runat="server" Height="16px" Width="150px" OnSelectedIndexChanged="ddlStudentName_SelectedIndexChanged">
+        </asp:DropDownList>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<asp:Button ID="btnSearch" runat="server" Text="Search" Width="149px" position ="absolute" OnClick="btnSearch_Click" Height="23px"/>
         &nbsp;&nbsp;
-        <asp:Label ID="lblStudentName" runat="server" Text="Student Name:"></asp:Label>
-        &nbsp;<asp:TextBox ID="txtstudentName" runat="server"></asp:TextBox>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Label ID="lblFieldOfStudy" runat="server" Text="Field of Study"></asp:Label>: <asp:TextBox ID="txtFieldOfStudy" runat="server"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <br /><br /><br /><br /><br />
+        <br />
+        <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="btnAddNewStudent" runat="server" Text="Add New Student" position="absolute" OnClick="btnAddNewStudent_Click" style="margin-left: 11px" />
+        <br /><br /><br />
 
-        <br /><asp:Button ID="btnAddNewStudent" runat="server" Text="Add New Student" position="absolute" OnClick="btnAddNewStudent_Click" />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-        <asp:Button ID="btnSearch" runat="server" Text="Search" Width="107px" position ="absolute" OnClick="btnSearch_Click"/>
+        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
         <br />
         <br />
         <asp:Label ID="lblSearchErrorOutput" runat="server"></asp:Label>

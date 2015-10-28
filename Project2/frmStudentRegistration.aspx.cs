@@ -140,6 +140,30 @@ namespace Project2
 
         }
 
+        public void registerStudentForClass(string StudentID, string CRN)
+        {
+            DBConnect objDB = new DBConnect();
+            string strSQL = "INSERT INTO [CourseRegistration] (StudentID, CRN) VALUES('" + StudentID + "','" + CRN + "')";
+            int updatedRows = objDB.DoUpdate(strSQL);
+
+            strSQL = "DECLARE @DecrementValue int SET @DecrementValue = 1 UPDATE Course SET NumberOfSeatsAvailable = NumberOfSeatsAvailable - @DecrementValue WHERE CRN='" + CRN + "'";
+            updatedRows = objDB.DoUpdate(strSQL);
+
+            strSQL = "SELECT CreditHours FROM Course WHERE CRN='" + CRN + "'";
+            DataSet myDS = objDB.GetDataSet(strSQL);
+            DataRow currRow = objDB.GetRow(myDS, 0);
+            float courseCredit = float.Parse(currRow["CreditHours"].ToString());
+            float coursePrice = courseCredit * 10000;
+
+            strSQL = "DECLARE @CoursePrice float SET @CoursePrice = " + coursePrice + " UPDATE Students SET TutionOwed = TutionOwed + @CoursePrice WHERE StudentID=" + StudentID;
+            updatedRows = objDB.DoUpdate(strSQL);
+        }
+
+        protected void Button3_Click1(object sender, EventArgs e)
+        {
+
+        }
+
 
 
 

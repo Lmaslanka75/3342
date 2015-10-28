@@ -1,4 +1,4 @@
-﻿body {    height: 600px;
+﻿body {    height: 648px;
     width: 1232px;
 }
 
@@ -6,6 +6,7 @@ h1
 {
     text-align:center;
    color: #BD6B57;
+    height: 36px;
 }
 
 .sidePanel 
@@ -53,21 +54,21 @@ Button.sidePanel
     display:inline;
     text-align:center;
     margin-left: 80px;
-    top: 111px;
-     left:135px;
-     height: 232px;
-      width:782px;
+    top: 110px;
+     left:215px;
+     height: 182px;
+      width:812px;
 }
 
 .register 
 {
    position:absolute;
    text-align:center;
-    margin-left: 52px;
-    top: 180px;
-    left: 208px;
+    margin-left: 33px;
+    top: 291px;
+    left: 256px;
     height: 104px;
-    width:714px;
+    margin-top: 0px;
 }
 
 .gridview 
@@ -76,13 +77,14 @@ Button.sidePanel
     display:inline;
     margin-left:80px;
     clear:left;
-    top: 363px;
-    width: 64%;
+    top: 366px;
+    width: 66%;
     float: right;
     padding: 15px;
-    height: 179px;
+    height: 252px;
     box-sizing:border-box;
-    left: 143px;
+    left: 251px;
+    right: -22px;
 }
 
 h2.gridview
@@ -121,7 +123,7 @@ TextBox .personalInfo
 .floating-box {
     float: left;
     width: 308px;
-    height: 38px;
+    height: 43px;
     margin: 5px;  
 }
 

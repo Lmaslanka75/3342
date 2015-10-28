@@ -37,7 +37,7 @@
 
 
         <div class="gridview">
-        <asp:GridView ID="gvNewStudent" runat="server" AutoGenerateColumns="False" Height="189px" Width="746px">
+        <asp:GridView ID="gvNewStudent" runat="server" Height="224px" Width="786px">
             <Columns>
                 <asp:BoundField HeaderText="StudentID" />
                 <asp:BoundField HeaderText="Student Name" />
@@ -75,9 +75,12 @@
             <asp:Label ID="Label7" runat="server" Text="Field of Study"></asp:Label>
             &nbsp;&nbsp;
             <asp:TextBox ID="txtFieldOfStudy" runat="server" Height="16px"></asp:TextBox>
+                  <br />
             <br />
-              <br />
                   <asp:Button ID="btnAddNewStudent" runat="server" OnClick="btnAddNewStudent_Click" Text="Add New Student" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <asp:Button ID="Button3" runat="server" Height="26px" OnClick="Button3_Click1" style="margin-top: 0px" Text="View Roster" Width="139px" />
+              <br />
         </div>
 
 

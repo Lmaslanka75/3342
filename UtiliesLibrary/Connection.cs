@@ -182,10 +182,10 @@ namespace UtilitiesLibrary
             return myConnectionSql;
         }
 
-        //public void CloseConnection()
-        //{
-        //    myConnectionSql.Close();
-        //}
+        public void CloseConnection()
+        {
+            myConnectionSql.Close();
+        }
 
         public void ResetConnection()
         {

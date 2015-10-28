@@ -9,6 +9,7 @@ using System.Data;
 using System.Data.SqlClient;
 
 
+
 namespace Project2
 {
     
@@ -21,6 +22,7 @@ namespace Project2
         {
             if (!IsPostBack)
             {
+                loadNames();
                 bindSemester();
                 bindCourseTitle();
             }
@@ -49,14 +51,12 @@ namespace Project2
         public void bindCourseTitle()
         {
             string selectedDepartment = ddlSemester.SelectedValue;
-
             //Database Updates
             SqlCommand sqlCommand = new SqlCommand();
             sqlCommand.CommandType = CommandType.StoredProcedure;
             sqlCommand.CommandText = "GetCourseTitle";
             sqlCommand.Parameters.AddWithValue("@selectedDepartment", selectedDepartment);
             ddlDepartment.DataSource = dbobj.GetDataSetUsingCmdObj(sqlCommand);
-            // ddlDepartment.DataSource = dbobj.GetDataSet(departmentQuery);
             ddlDepartment.DataTextField = "DepartmentID";
             ddlDepartment.DataValueField = "CRN";
             ddlDepartment.DataBind();
@@ -73,9 +73,9 @@ namespace Project2
         protected void btnEnter_Click(object sender, EventArgs e)
         {   
             //local variables for new user
-            int studentID = int.Parse(txtstudentID.Text);
-            string studentName = txtstudentName.Text;
-            string fieldOfStudy = txtFieldOfStudy.Text;
+           
+            string studentName = ddlStudentName.SelectedValue;
+           
             //DBConnect object
             DBConnect dbobj = new DBConnect();
 //good code
@@ -83,9 +83,9 @@ namespace Project2
             SqlCommand sqlCommand = new SqlCommand();
             sqlCommand.CommandType = CommandType.StoredProcedure;
             sqlCommand.CommandText = "AddNewStudent";
-            sqlCommand.Parameters.AddWithValue("@StudentID", studentID);
+           // sqlCommand.Parameters.AddWithValue("@StudentID", studentID);
             sqlCommand.Parameters.AddWithValue("@Name", studentName);
-            sqlCommand.Parameters.AddWithValue("@FieldOfStudy", fieldOfStudy);
+           // sqlCommand.Parameters.AddWithValue("@FieldOfStudy", fieldOfStudy);
 
             dbobj.DoUpdateUsingCmdObj(sqlCommand);
 
@@ -110,17 +110,9 @@ namespace Project2
         protected void btnSearch_Click(object sender, EventArgs e)
         {
             //local variables for new user
-            int studentID = int.Parse(txtstudentID.Text);
-            string studentName = txtstudentName.Text;
-            string fieldOfStudy = txtFieldOfStudy.Text;
+            string studentName = ddlStudentName.SelectedValue;
 
-            //stored procedure
-            SqlCommand objCommand = new SqlCommand();
-            objCommand.CommandType = CommandType.StoredProcedure;
-            objCommand.CommandText = "searchStudents";      //MUST ADD THIS STORED PROCEDURE!!! " searchStudents
-
-
-
+            //load all of student at selected index's courses
 
 
         }
@@ -137,7 +129,25 @@ namespace Project2
 
         protected void Button3_Click(object sender, EventArgs e)
         {
+        }
+        protected void Button2_Click(object sender, EventArgs e)
+        {
 
+        }
+        protected void ddlStudentName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        //bind names in database to drop down list
+        public void loadNames()
+        {
+            //stored procedure
+            SqlCommand objCommand = new SqlCommand();
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "ShowAllStudentNames";
+            DataSet myDataSet = dbobj.GetDataSetUsingCmdObj(objCommand);
+            ddlStudentName.DataSource = myDataSet;
+            ddlStudentName.DataBind(); 
         }
 
 
