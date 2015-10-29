@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CreditCardStyle.css" />
     <Content Include="frmPurchase.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
