@@ -7,5 +7,10 @@ namespace Project3
 {
     public class CreditCard
     {
+        float cardNumber;
+        string cardType;
+        int expirationMonth;
+        int CSV;
+
     }
 }
