@@ -22,47 +22,42 @@
         <br />
         <br />
         <div class="floating-box">
-            <asp:Label ID="lbl" runat="server" Text="lbl"></asp:Label>
+            <asp:Label ID="lbl" runat="server" Text="First Name"></asp:Label>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="txt" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtFirstName" runat="server"></asp:TextBox>
         </div>
             <div class="floating-box">
-            <asp:Label ID="Label2" runat="server" Text="lbl"></asp:Label>
+            <asp:Label ID="lblLastName" runat="server" Text="Last Name"></asp:Label>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
         </div>
-            <div class="floating-box">
-            <asp:Label ID="Label3" runat="server" Text="lbl"></asp:Label>
+           
+        <br />
+        <br />
+        <br />
+           
+        <br/> <div class="floating-box">
+            <asp:Label ID="lblAddress" runat="server" Text="Address"></asp:Label>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtAddress" runat="server"></asp:TextBox>
         </div>
             <div class="floating-box">
-            <asp:Label ID="Label4" runat="server" Text="lbl"></asp:Label>
+            <asp:Label ID="lblCity" runat="server" Text="City"></asp:Label>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtCity" runat="server"></asp:TextBox>
         </div>
 
             <div class="floating-box">
-            <asp:Label ID="Label1" runat="server" Text="lbl"></asp:Label>
+            <asp:Label ID="lblState" runat="server" Text="State"></asp:Label>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtState" runat="server"></asp:TextBox>
         </div>
         <div class="floating-box">
-            <asp:Label ID="Label5" runat="server" Text="lbl"></asp:Label>
+            <asp:Label ID="lblZip" runat="server" Text="Zipcode"></asp:Label>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
         </div>
-        <div class="floating-box">
-            <asp:Label ID="Label6" runat="server" Text="lbl"></asp:Label>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
-        </div>
-        <div class="floating-box">
-            <asp:Label ID="Label7" runat="server" Text="lbl"></asp:Label>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
-        </div>
-   
+           
     </form>
 </body>
 </html>

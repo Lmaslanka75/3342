@@ -11,6 +11,22 @@ namespace Project3
         string cardType;
         int expirationMonth;
         int CSV;
+        int cardlimit;
 
-    }
+        public CreditCard()
+        {
+            
+            cardlimit= 10000;
+ 
+        }
+    
+    
+    
+    
+    }//end of class
+
+
+
 }
+
+
