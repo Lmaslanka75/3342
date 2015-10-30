@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using ObjectLibrary;
+using UtilitiesLibrary;
 
 namespace Project3WS
 {
@@ -16,11 +18,39 @@ namespace Project3WS
     // [System.Web.Script.Services.ScriptService]
     public class CreditCardWS : System.Web.Services.WebService
     {
+       
 
         [WebMethod]
-        public string HelloWorld()
+        public void AddCustomer(Customer customer)
         {
-            return "Hello World";
+            DBConnect objdb = new DBConnect();
+
+            string insertCustSQL = "INSERT INTO CUSTOMER (FirstName, LastName, Address, City, State, Zipcode)"
+            + "VALUES ('" + customer.FirstName + "','" + customer.LastName + "','" + customer.Address + "','" + customer.City + "','" + customer.State + "','" + customer.Zipcode + "')'";
+
+            objdb.DoUpdate(insertCustSQL);
+            
+
         }
-    }
-}
+
+
+
+        //Method to add Credit card account into DB
+        [WebMethod]
+        public void AddCreditCardAccount() 
+        {
+
+ 
+        }
+
+
+
+
+
+
+
+
+
+    }//end of CreditCardClass
+
+}//end of Namespace

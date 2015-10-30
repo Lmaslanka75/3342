@@ -13,5 +13,22 @@ namespace Project3
         {
 
         }
+
+        protected void txtCSV_TextChanged(object sender, EventArgs e)
+        {
+            txtCSV.Text = "";
+        }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+           string Name = txtNameOnCard.Text;
+           float cardNumber = float.Parse(txtCardNumber.Text);
+           int CSV = int.Parse(txtCSV.Text);
+           int expMonth = int.Parse(ddlExpMonth.SelectedValue);
+           int expYear = int.Parse(ddlExpYear.SelectedValue);
+
+            
+
+        }
     }
 }

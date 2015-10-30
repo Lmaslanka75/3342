@@ -59,13 +59,12 @@
   <ItemGroup>
     <Content Include="CreditCardStyle.css" />
     <Content Include="frmHome.aspx" />
-    <Content Include="frmPurchase.aspx" />
+    <Content Include="frmNewCustomer.aspx" />
     <Content Include="frmTransaction.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CreditCard.cs" />
-    <Compile Include="Customer.cs" />
     <Compile Include="frmHome.aspx.cs">
       <DependentUpon>frmHome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -73,12 +72,12 @@
     <Compile Include="frmHome.aspx.designer.cs">
       <DependentUpon>frmHome.aspx</DependentUpon>
     </Compile>
-    <Compile Include="frmPurchase.aspx.cs">
-      <DependentUpon>frmPurchase.aspx</DependentUpon>
+    <Compile Include="frmNewCustomer.aspx.cs">
+      <DependentUpon>frmNewCustomer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="frmPurchase.aspx.designer.cs">
-      <DependentUpon>frmPurchase.aspx</DependentUpon>
+    <Compile Include="frmNewCustomer.aspx.designer.cs">
+      <DependentUpon>frmNewCustomer.aspx</DependentUpon>
     </Compile>
     <Compile Include="frmTransaction.aspx.cs">
       <DependentUpon>frmTransaction.aspx</DependentUpon>
@@ -97,6 +96,15 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ObjectLibrary\ObjectLibrary.csproj">
+      <Project>{bba11509-2f37-4fbd-b5c9-09c588339466}</Project>
+      <Name>ObjectLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

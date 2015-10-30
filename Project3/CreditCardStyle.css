@@ -1,10 +1,28 @@
-﻿body {
+﻿body 
+{
+    font-family:'Century Gothic'; 
 }
 
 
 .floating-box {
     float: left;
-    width: 308px;
+    width: 507px;
     height: 43px;
     margin: 5px;  
+}
+
+.content 
+{
+    background-color:#c2e9e9;
+    height: 323px;
+    width: 1034px;
+    display:inline-block;
+    
+}
+
+h1 
+{
+    text-align:center;
+    width: 750px;
+    height: 45px;
 }

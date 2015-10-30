@@ -114,6 +114,16 @@
       <CachedSettingsPropName>Project3WS_CreditCardRef_CreditCardWS</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ObjectLibrary\ObjectLibrary.csproj">
+      <Project>{bba11509-2f37-4fbd-b5c9-09c588339466}</Project>
+      <Name>ObjectLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtiliesLibrary\UtiliesLibrary.csproj">
+      <Project>{25212099-032a-4ce9-9cd0-192ec3258ad2}</Project>
+      <Name>UtiliesLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

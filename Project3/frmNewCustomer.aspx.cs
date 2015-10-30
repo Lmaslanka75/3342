@@ -13,5 +13,18 @@ namespace Project3
         {
 
         }
+
+        protected void btnContinue_Click(object sender, EventArgs e)
+        {
+
+           string name= txtName.Text;
+           string address = txtAddress.Text;
+
+            
+            
+            
+            //Load the Credit Card Input Page
+            Response.Redirect("frmTransaction");
+        }
     }
 }

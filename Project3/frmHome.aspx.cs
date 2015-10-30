@@ -13,5 +13,15 @@ namespace Project3
         {
 
         }
+
+        protected void btnNewCard_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frmNewCustomer");
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
