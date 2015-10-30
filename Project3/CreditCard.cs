@@ -10,6 +10,7 @@ namespace Project3
         float cardNumber;
         string cardType;
         int expirationMonth;
+        int expYear;
         int CSV;
         int cardlimit;
 
@@ -17,7 +18,6 @@ namespace Project3
         {
             
             cardlimit= 10000;
- 
         }
     
     
@@ -27,6 +27,7 @@ namespace Project3
 
 
 
-}
+}//end of namespace
+
 
 

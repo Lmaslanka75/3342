@@ -60,6 +60,7 @@
     <Content Include="CreditCardStyle.css" />
     <Content Include="frmHome.aspx" />
     <Content Include="frmPurchase.aspx" />
+    <Content Include="frmTransaction.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -78,6 +79,13 @@
     </Compile>
     <Compile Include="frmPurchase.aspx.designer.cs">
       <DependentUpon>frmPurchase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmTransaction.aspx.cs">
+      <DependentUpon>frmTransaction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmTransaction.aspx.designer.cs">
+      <DependentUpon>frmTransaction.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Transaction.cs" />
