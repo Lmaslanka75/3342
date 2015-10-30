@@ -18,8 +18,7 @@ namespace Project3
         {
 
            string name= txtName.Text;
-           string address = txtAddress.Text;
-
+            string address = txtAddress.Text;
             
             
             
