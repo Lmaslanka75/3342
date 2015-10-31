@@ -26,7 +26,12 @@ namespace Project3
            int CSV = int.Parse(txtCSV.Text);
            int expMonth = int.Parse(ddlExpMonth.SelectedValue);
            int expYear = int.Parse(ddlExpYear.SelectedValue);
+           double transactionAmt = double.Parse(txtAmount.Text);
 
+           if (!Name.Equals(""))
+           {
+ 
+           }
             
 
         }

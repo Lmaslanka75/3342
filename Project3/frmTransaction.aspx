@@ -11,33 +11,36 @@
         }
         #form1 {
             height: 535px;
-            width: 763px;
+            width: 1093px;
         }
     </style>
     <link href="CreditCardStyle.css" rel="stylesheet" />
 
 </head>
-<body style="height: 536px; width: 778px;">
+<body style="height: 536px; width: 1052px;">
     <form id="form1" runat="server">
     <div style="height: 0px">
     
         <br />
     <h1>Payment Transaction</h1>
     </div>
-        <div class="content" style="height: 396px; width: 753px">
+        <div class="content" style="height: 396px; width: 1050px">
             <div class ="floating-box">
         <asp:Label ID="Label1" runat="server" Text="Name on Card"></asp:Label>
 &nbsp;
         <asp:TextBox ID="txtNameOnCard" runat="server" Width="366px"></asp:TextBox>
     </div>
+            <div class="floating-box">
+
+            </div>
 
 
   
         <div class="floating-box">
             <asp:Label ID="lblcardNumber" runat="server" Text="Card Number"></asp:Label>
-            &nbsp; &nbsp;<asp:TextBox ID="txtCardNumber" runat="server" Width="251px" TextMode="Number"></asp:TextBox>
+            &nbsp; &nbsp;<asp:TextBox ID="txtCardNumber" runat="server" Width="251px" TextMode="Number" MaxLength="15"></asp:TextBox>
             &nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="txtCSV" runat="server" Width="97px" Font-Names="Century Gothic" OnTextChanged="txtCSV_TextChanged">Security Code</asp:TextBox>
+            <asp:TextBox ID="txtCSV" runat="server" Width="97px" Font-Names="Century Gothic" OnTextChanged="txtCSV_TextChanged" MaxLength="2">Security Code</asp:TextBox>
         </div>
             <div class="floating-box">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
@@ -89,7 +92,7 @@
         </div>
              <div class="floating-box">
 
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                  <asp:Label ID="Label2" runat="server" Text="Card Type"></asp:Label>
 &nbsp;
                  <asp:DropDownList ID="ddlCardType" runat="server" Font-Names="Century Gothic" Height="16px" Width="113px">
@@ -100,26 +103,12 @@
                  </asp:DropDownList>
 
         </div>
-                        <div class="floating-box">
-
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <asp:Label ID="Label4" runat="server" Text="City"></asp:Label>
-&nbsp;&nbsp;&nbsp;
-                            <asp:TextBox ID="txtCity" runat="server" Width="214px"></asp:TextBox>
-
-            </div>
-
-        <div class="floating-box">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<asp:Label ID="lblZip" runat="server" Text="Zipcode"></asp:Label>
-            &nbsp;
-            <asp:TextBox ID="txtZipCode" runat="server" Width="218px"></asp:TextBox>
-        </div>
 
 
         <div class="floating-box">
 
             <asp:Label ID="Label3" runat="server" Text="Transaction Amount"></asp:Label>
-&nbsp;<asp:TextBox ID="txtAmount" runat="server" Width="148px"></asp:TextBox>
+&nbsp;<asp:TextBox ID="txtAmount" runat="server" Width="148px" TextMode="Number"></asp:TextBox>
 
         </div>
 
@@ -133,10 +122,11 @@
 
 
 
-            </div>
+            <br />
+           
 
-
-
+            <div class="floating-box">
+                 <asp:Label ID="lblTransactionError" runat="server"></asp:Label>
 
 
     </form>

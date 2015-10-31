@@ -6,9 +6,10 @@
 
 .floating-box {
     float: left;
-    width: 507px;
+    width: 505px;
     height: 43px;
     margin: 5px;  
+    font: Century Gothic;
 }
 
 .content 
@@ -23,6 +24,19 @@
 h1 
 {
     text-align:center;
-    width: 750px;
+    width: 623px;
     height: 45px;
 }
+
+.box {
+    float: right;
+    height: 43px;
+    margin: 2px;  
+    font: Century Gothic;
+}
+
+.button 
+{
+    font: Century Gothic;
+}
+
