@@ -60,12 +60,12 @@
     <Content Include="CreditCardStyle.css" />
     <Content Include="frmHome.aspx" />
     <Content Include="frmLoginPage.aspx" />
+    <Content Include="frmNewCard.aspx" />
     <Content Include="frmNewCustomer.aspx" />
     <Content Include="frmTransaction.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CreditCard.cs" />
     <Compile Include="frmHome.aspx.cs">
       <DependentUpon>frmHome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -79,6 +79,13 @@
     </Compile>
     <Compile Include="frmLoginPage.aspx.designer.cs">
       <DependentUpon>frmLoginPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmNewCard.aspx.cs">
+      <DependentUpon>frmNewCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmNewCard.aspx.designer.cs">
+      <DependentUpon>frmNewCard.aspx</DependentUpon>
     </Compile>
     <Compile Include="frmNewCustomer.aspx.cs">
       <DependentUpon>frmNewCustomer.aspx</DependentUpon>
@@ -112,6 +119,10 @@
     <ProjectReference Include="..\ObjectLibrary\ObjectLibrary.csproj">
       <Project>{bba11509-2f37-4fbd-b5c9-09c588339466}</Project>
       <Name>ObjectLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtiliesLibrary\UtiliesLibrary.csproj">
+      <Project>{25212099-032a-4ce9-9cd0-192ec3258ad2}</Project>
+      <Name>UtiliesLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

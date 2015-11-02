@@ -1,28 +1,18 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="frmTransaction.aspx.cs" Inherits="Project3.frmTransaction" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="frmNewCard.aspx.cs" Inherits="Project3.frmNewCard" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <style type="text/css">
-        .floating-box {
-            width: 462px;
-        }
-        #form1 {
-            height: 535px;
-            width: 1093px;
-        }
-    </style>
     <link href="CreditCardStyle.css" rel="stylesheet" />
-
 </head>
-<body style="height: 536px; width: 1052px;">
+<body>
     <form id="form1" runat="server">
     <div style="height: 0px">
     
         <br />
-    <h1>Payment Transaction</h1>
+    <h1>Add New Credit Card</h1>
     </div>
         <div class="content" style="height: 396px; width: 1050px">
             <div class ="floating-box">
@@ -105,18 +95,10 @@
         </div>
 
 
-        <div class="floating-box">
-
-            <asp:Label ID="Label3" runat="server" Text="Transaction Amount"></asp:Label>
-&nbsp;<asp:TextBox ID="txtAmount" runat="server" Width="148px" TextMode="Number"></asp:TextBox>
-
-        </div>
 
 
 
-
-
-            <asp:Button ID="btnSubmit" runat="server" Font-Names="Century Gothic" Font-Size="Large" Height="49px" Text="Submit" Width="131px" OnClick="btnSubmit_Click" />
+            <asp:Button ID="btnAddCard" runat="server" Font-Names="Century Gothic" Font-Size="Large" Height="49px" Text="Add Card" Width="131px" OnClick="btnSubmit_Click" />
 
 
 
@@ -124,10 +106,10 @@
 
             <br />
            
-            </div>
+
             <div class="floating-box">
                  <asp:Label ID="lblTransactionError" runat="server"></asp:Label>
-                </div>
+
 
     </form>
 </body>

@@ -8,7 +8,7 @@
     <style type="text/css">
         #form1 {
             height: 345px;
-            width: 628px;
+            width: 1053px;
         }
     </style>
     <link href="CreditCardStyle.css" rel="stylesheet" />
@@ -20,7 +20,7 @@
 
         <br />
         <h1>Home Page</h1>
-        <div class="content" style="height: 294px; width: 623px">
+        <div class="content" style="height: 228px; width: 1045px">
             <div class="floating-box">
 
                 <asp:Button ID="btnNewTransaction" runat="server" Font-Names="Century Gothic" Height="36px" OnClick="btnNewTransaction_Click" Text="New Transaction" Width="201px" />
