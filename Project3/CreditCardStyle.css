@@ -1,13 +1,16 @@
 ﻿body 
 {
     font-family:'Century Gothic';
-    width: 777px;
+    width: 776px;
+    height: 669px;
+    margin-right: 18px;
+    margin-top: 31px;
 }
 
 
 .floating-box {
     float: left;
-    width: 505px;
+    width: 501px;
     height: 48px;
     margin: 5px;
 }
@@ -24,7 +27,7 @@
 h1 
 {
     text-align:center;
-    width: 655px;
+    width: 763px;
     height: 45px;
 }
 

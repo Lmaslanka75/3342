@@ -78,7 +78,15 @@ namespace Project3WS
         } //end of getCreditCardCount method
 
 
+        [WebMethod]
+        public void Transaction(double transactionAmt)
+        {
+            //sqlcommand
 
+            //if (Account < 0)
+            //{ return error code 0
+            //}
+        }
 
 
 

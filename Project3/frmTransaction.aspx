@@ -10,29 +10,26 @@
             width: 462px;
         }
         #form1 {
-            height: 535px;
-            width: 1093px;
+            height: 726px;
+            width: 1052px;
         }
     </style>
     <link href="CreditCardStyle.css" rel="stylesheet" />
 
 </head>
-<body style="height: 536px; width: 1052px;">
+<body style="height: 692px; width: 1070px;">
     <form id="form1" runat="server">
     <div style="height: 0px">
     
-        <br />
     <h1>Payment Transaction</h1>
     </div>
-        <div class="content" style="height: 396px; width: 1050px">
+        <div class="content" style="height: 431px; width: 828px">
             <div class ="floating-box">
         <asp:Label ID="Label1" runat="server" Text="Name on Card"></asp:Label>
 &nbsp;
         <asp:TextBox ID="txtNameOnCard" runat="server" Width="366px"></asp:TextBox>
     </div>
-            <div class="floating-box">
-
-            </div>
+            
 
 
   
@@ -40,13 +37,12 @@
             <asp:Label ID="lblcardNumber" runat="server" Text="Card Number"></asp:Label>
             &nbsp; &nbsp;<asp:TextBox ID="txtCardNumber" runat="server" Width="251px" TextMode="Number" MaxLength="15"></asp:TextBox>
             &nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="txtCSV" runat="server" Width="97px" Font-Names="Century Gothic" OnTextChanged="txtCSV_TextChanged" MaxLength="2">Security Code</asp:TextBox>
-        </div>
+            </div>
             <div class="floating-box">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
                 <asp:Label ID="lblCity" runat="server" Text="Expires:"></asp:Label>
                 &nbsp;&nbsp;
-                <asp:DropDownList ID="ddlExpMonth" runat="server" Height="16px" Width="83px" Font-Names="Century Gothic">
+                <asp:DropDownList ID="ddlExpMonth" runat="server" Height="24px" Width="83px" Font-Names="Century Gothic">
                     <asp:ListItem Value="01"></asp:ListItem>
                     <asp:ListItem Value="02"></asp:ListItem>
                     <asp:ListItem Value="03"></asp:ListItem>
@@ -61,7 +57,7 @@
                     <asp:ListItem Value="12"></asp:ListItem>
                 </asp:DropDownList>
 &nbsp;&nbsp;
-                <asp:DropDownList ID="ddlExpYear" runat="server" Width="96px" Font-Names="Century Gothic">
+                <asp:DropDownList ID="ddlExpYear" runat="server" Width="96px" Font-Names="Century Gothic" Height="24px">
                     <asp:ListItem Value="2015"></asp:ListItem>
                     <asp:ListItem Value="2016"></asp:ListItem>
                     <asp:ListItem Value="2017"></asp:ListItem>
@@ -90,11 +86,14 @@
                     <asp:ListItem></asp:ListItem>
                 </asp:DropDownList>
         </div>
-             <div class="floating-box">
+            <div class="floating-box">
+                Security Code
+                <asp:TextBox ID="txtCSV" runat="server" Height="24px" Width="70px"></asp:TextBox>
+            </div>
 
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                 <asp:Label ID="Label2" runat="server" Text="Card Type"></asp:Label>
-&nbsp;
+             <div class="floating-box">
+                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 <asp:Label ID="Label2" runat="server" Text="Card Type"></asp:Label>&nbsp;
                  <asp:DropDownList ID="ddlCardType" runat="server" Font-Names="Century Gothic" Height="16px" Width="113px">
                      <asp:ListItem Value="VISA"></asp:ListItem>
                      <asp:ListItem Value="Master Card"></asp:ListItem>
@@ -108,7 +107,7 @@
         <div class="floating-box">
 
             <asp:Label ID="Label3" runat="server" Text="Transaction Amount"></asp:Label>
-&nbsp;<asp:TextBox ID="txtAmount" runat="server" Width="148px" TextMode="Number"></asp:TextBox>
+&nbsp;<asp:TextBox ID="txtAmount" runat="server" Width="148px" Height="21px"></asp:TextBox>
 
         </div>
 
@@ -124,10 +123,11 @@
 
             <br />
            
-            </div>
             <div class="floating-box">
                  <asp:Label ID="lblTransactionError" runat="server"></asp:Label>
                 </div>
+
+            </div>
 
     </form>
 </body>
