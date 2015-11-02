@@ -11,13 +11,14 @@
         }
         #form1 {
             height: 726px;
-            width: 1052px;
+            width: 881px;
+            margin-right: 0px;
         }
     </style>
     <link href="CreditCardStyle.css" rel="stylesheet" />
 
 </head>
-<body style="height: 692px; width: 1070px;">
+<body style="height: 692px; width: 909px;">
     <form id="form1" runat="server">
     <div style="height: 0px">
     

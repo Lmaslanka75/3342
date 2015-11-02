@@ -40,9 +40,15 @@ namespace Project3
                expMonth = Int32.Parse(ddlExpMonth.SelectedValue);
                expYear = Int32.Parse(ddlExpYear.SelectedValue);
                CSV = Int32.Parse(txtCSV.Text);
+               Application.Lock();
+               {
+                   //pass amount
+                   //return value to determine if it was successful
+
+               }//end of Application.Lock()
                CreditCardWSRef.CreditCardWS pxy = new CreditCardWSRef.CreditCardWS();
            }
 
-        }
+        }//end of btnSubmit event
     }
 }

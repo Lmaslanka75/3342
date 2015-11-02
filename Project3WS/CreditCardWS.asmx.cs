@@ -36,7 +36,7 @@ namespace Project3WS
 
 
 
-        //Method to add Credit card account into DB
+        //Method to add Credit card account to Account Table
         [WebMethod]
         public void AddCreditCardAccount(string name, float cardNumber, int expMonth, int expYear, int CSV) 
         {
@@ -44,9 +44,7 @@ namespace Project3WS
             SqlCommand sqlCommand = new SqlCommand();
             sqlCommand.CommandType = CommandType.StoredProcedure;
             sqlCommand.CommandText = "AddNewCreditCard";
-
-            int creditCardID = getCreditCardCount() + 1;
-            sqlCommand.Parameters.AddWithValue("@CreditCardID", creditCardID);
+            //Values to go into Account Table
             sqlCommand.Parameters.AddWithValue("@Name", name);
             sqlCommand.Parameters.AddWithValue("@CardNumber", cardNumber);
             sqlCommand.Parameters.AddWithValue("@ExpMonth", expMonth);
@@ -79,17 +77,84 @@ namespace Project3WS
 
 
         [WebMethod]
-        public void Transaction(double transactionAmt)
+        public void Transaction(string name, float cardNumber, double transactionAmt)
         {
-            //sqlcommand
+     
+            //get Account Balance
+            decimal balance = getAccountBalance(name, cardNumber);
+            decimal transaction = decimal.Parse(transactionAmt.ToString());  
 
-            //if (Account < 0)
-            //{ return error code 0
-            //}
-        }
+            //if balance is greater than transaction amount, do the transaction
+            if (balance > transaction) 
+            {
+                //Update Account balance using stored procedure 
+                DBConnect objdb = new DBConnect();
+                SqlCommand sqlCommand = new SqlCommand();
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.CommandText = "UpdateAccountBalance";
+                sqlCommand.Parameters.AddWithValue("@CardNumber", cardNumber);
+                sqlCommand.Parameters.AddWithValue("@Balance", balance);
+                sqlCommand.Parameters.AddWithValue("@TransactionAmount", transactionAmt);
+                objdb.DoUpdateUsingCmdObj(sqlCommand);  //execute update
+
+                //create a log of the transaction
+                //addTransactionLog();
 
 
+            }
 
+        }//end of transaction method
+
+
+        //method to get account balance
+        [WebMethod]
+        public decimal getAccountBalance(string name, float cardNumber)
+        {
+            DBConnect objdb = new DBConnect();
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.CommandText = "GetAccountBalance";
+            sqlCommand.Parameters.AddWithValue("@Name", name);
+            sqlCommand.Parameters.AddWithValue("@CardNumber", cardNumber);
+
+            SqlParameter returnParameter = new SqlParameter("@Balance", DbType.Decimal);
+            returnParameter.Direction = ParameterDirection.ReturnValue;
+            sqlCommand.Parameters.Add(returnParameter);
+
+            // Execute stored procedure using DBConnect object and the SQLCommand object
+            objdb.GetDataSetUsingCmdObj(sqlCommand);
+
+            decimal balance;
+            balance = decimal.Parse(sqlCommand.Parameters["@Balance"].Value.ToString());
+            return balance;
+
+        }//end of getAccountBalance method
+
+
+        //method to insert transaction log into CreditCard TAble
+        [WebMethod]
+        public void addTransactionLog(string name, float cardNumber, int expMonth, int expYear, int CSV, decimal balance, decimal transactionAmt ) 
+        {
+            // stored procedure "AddTransactionLog"
+            DBConnect objdb = new DBConnect();
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.CommandText = "AddTransactionLog";
+            sqlCommand.Parameters.AddWithValue("@Name", name);
+            sqlCommand.Parameters.AddWithValue("@CardNumber", cardNumber);
+            sqlCommand.Parameters.AddWithValue("@ExpMonth", expMonth);
+            sqlCommand.Parameters.AddWithValue("@ExpYear", expYear);
+            sqlCommand.Parameters.AddWithValue("@CSV", CSV);
+            sqlCommand.Parameters.AddWithValue("@Balance", balance);
+           // sqlCommand.Parameters.AddWithValue("@tstamp", );
+           //addbalance
+            //add timestamp
+            sqlCommand.Parameters.AddWithValue("@TransactionAmount", transactionAmt);
+
+
+            objdb.DoUpdateUsingCmdObj(sqlCommand);
+
+        }//end of doTransaction() method
 
 
 
