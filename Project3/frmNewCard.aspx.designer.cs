@@ -121,6 +121,15 @@ namespace Project3 {
         protected global::System.Web.UI.WebControls.Button btnAddCard;
         
         /// <summary>
+        /// btnCancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancel;
+        
+        /// <summary>
         /// lblTransactionError control.
         /// </summary>
         /// <remarks>

@@ -1,15 +1,15 @@
 ﻿body 
 {
-    font-family:'Century Gothic'; 
+    font-family:'Century Gothic';
+    width: 777px;
 }
 
 
 .floating-box {
     float: left;
     width: 505px;
-    height: 43px;
-    margin: 5px;  
-    font: Century Gothic;
+    height: 48px;
+    margin: 5px;
 }
 
 .content 
@@ -24,15 +24,15 @@
 h1 
 {
     text-align:center;
-    width: 1047px;
+    width: 655px;
     height: 45px;
 }
 
 .box {
     float: right;
-    height: 43px;
+    height: 28px;
     margin: 2px;  
-    font: Century Gothic;
+    width: 322px;
 }
 
 .button 
@@ -40,3 +40,23 @@ h1
     font: Century Gothic;
 }
 
+a:link, a:visited 
+{
+    display: inline-block;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #98bf21;
+    text-align: center;
+    padding: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+a:hover, a:active {
+    background-color: #7A991A;
+}
+
+ul 
+{ 
+   display:inline-block; 
+}

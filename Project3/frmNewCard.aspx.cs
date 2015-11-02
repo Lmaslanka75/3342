@@ -21,27 +21,28 @@ namespace Project3
         //Add New Card into DB
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            DBConnect objdb = new DBConnect();
-           
+           //data fields
            string name =  txtNameOnCard.Text;
            float cardNumber = float.Parse(txtCardNumber.Text);
            int CSV = int.Parse(txtCSV.Text);
            int expMonth = int.Parse(ddlExpMonth.SelectedValue);
            int expYear = int.Parse(ddlExpYear.SelectedValue);
 
-           SqlCommand sqlCommand = new SqlCommand();
-           sqlCommand.CommandType = CommandType.StoredProcedure;
-           sqlCommand.CommandText = "AddNewCreditCard";
-           sqlCommand.Parameters.AddWithValue("@Name", name);
-           sqlCommand.Parameters.AddWithValue("@CardNumber", cardNumber);
-           sqlCommand.Parameters.AddWithValue("@ExpMonth", expMonth);
-           sqlCommand.Parameters.AddWithValue("@ExpYear",expYear);
-           sqlCommand.Parameters.AddWithValue("@CSV",CSV);
-           objdb.DoUpdateUsingCmdObj(sqlCommand);
+           CreditCardWSRef.CreditCardWS pxy = new CreditCardWSRef.CreditCardWS();
+           pxy.AddCreditCardAccount(name, cardNumber, expMonth, expYear, CSV);
 
             
-        
 
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frmHome.aspx");
+        }
+
+        protected void txtCSV_TextChanged(object sender, EventArgs e)
+        {
+            txtCSV.Text = "";
         }
     }
 }

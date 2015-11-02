@@ -6,6 +6,11 @@
 <head runat="server">
     <title></title>
     <link href="CreditCardStyle.css" rel="stylesheet" />
+    <style type="text/css">
+        #form1 {
+            margin-top: 0px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -14,29 +19,30 @@
         <br />
     <h1>Add New Credit Card</h1>
     </div>
-        <div class="content" style="height: 396px; width: 1050px">
+        <div class="content" style="height: 420px; width: 1050px; margin-top: 0px;">
+            <br />
+            <br />
             <div class ="floating-box">
-        <asp:Label ID="Label1" runat="server" Text="Name on Card"></asp:Label>
-&nbsp;
-        <asp:TextBox ID="txtNameOnCard" runat="server" Width="366px"></asp:TextBox>
-    </div>
+            <asp:Label ID="Label1" runat="server" Text="Name on Card"></asp:Label>&nbsp;
+            <asp:TextBox ID="txtNameOnCard" runat="server" Width="366px" Height="24px"></asp:TextBox>
+            </div>
+
             <div class="floating-box">
 
             </div>
-
-
   
         <div class="floating-box">
             <asp:Label ID="lblcardNumber" runat="server" Text="Card Number"></asp:Label>
-            &nbsp; &nbsp;<asp:TextBox ID="txtCardNumber" runat="server" Width="251px" TextMode="Number" MaxLength="15"></asp:TextBox>
+            &nbsp; &nbsp;<asp:TextBox ID="txtCardNumber" runat="server" Width="251px" TextMode="Number" MaxLength="15" Height="24px"></asp:TextBox>
             &nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="txtCSV" runat="server" Width="97px" Font-Names="Century Gothic" OnTextChanged="txtCSV_TextChanged" MaxLength="2">Security Code</asp:TextBox>
+            <asp:TextBox ID="txtCSV" runat="server" Width="97px" Font-Names="Century Gothic" OnTextChanged="txtCSV_TextChanged" MaxLength="2" Height="24px">Security Code</asp:TextBox>
         </div>
+
             <div class="floating-box">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
                 <asp:Label ID="lblCity" runat="server" Text="Expires:"></asp:Label>
                 &nbsp;&nbsp;
-                <asp:DropDownList ID="ddlExpMonth" runat="server" Height="16px" Width="83px" Font-Names="Century Gothic">
+                <asp:DropDownList ID="ddlExpMonth" runat="server" Height="24px" Width="83px" Font-Names="Century Gothic">
                     <asp:ListItem Value="01"></asp:ListItem>
                     <asp:ListItem Value="02"></asp:ListItem>
                     <asp:ListItem Value="03"></asp:ListItem>
@@ -49,9 +55,9 @@
                     <asp:ListItem Value="10"></asp:ListItem>
                     <asp:ListItem Value="11"></asp:ListItem>
                     <asp:ListItem Value="12"></asp:ListItem>
-                </asp:DropDownList>
-&nbsp;&nbsp;
-                <asp:DropDownList ID="ddlExpYear" runat="server" Width="96px" Font-Names="Century Gothic">
+                </asp:DropDownList>&nbsp;&nbsp;
+
+                <asp:DropDownList ID="ddlExpYear" runat="server" Width="96px" Font-Names="Century Gothic" Height="24px">
                     <asp:ListItem Value="2015"></asp:ListItem>
                     <asp:ListItem Value="2016"></asp:ListItem>
                     <asp:ListItem Value="2017"></asp:ListItem>
@@ -80,35 +86,29 @@
                     <asp:ListItem></asp:ListItem>
                 </asp:DropDownList>
         </div>
-             <div class="floating-box">
 
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                 <asp:Label ID="Label2" runat="server" Text="Card Type"></asp:Label>
-&nbsp;
-                 <asp:DropDownList ID="ddlCardType" runat="server" Font-Names="Century Gothic" Height="16px" Width="113px">
+             <div class="floating-box">
+                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 <asp:Label ID="Label2" runat="server" Text="Card Type"></asp:Label> &nbsp;
+                 <asp:DropDownList ID="ddlCardType" runat="server" Font-Names="Century Gothic" Height="24px" Width="113px">
                      <asp:ListItem Value="VISA"></asp:ListItem>
                      <asp:ListItem Value="Master Card"></asp:ListItem>
                      <asp:ListItem Value="American Express"></asp:ListItem>
                      <asp:ListItem Value="Discover"></asp:ListItem>
                  </asp:DropDownList>
+             </div>
 
-        </div>
-
-
-
-
-
+            <div class ="floating-box">
             <asp:Button ID="btnAddCard" runat="server" Font-Names="Century Gothic" Font-Size="Large" Height="49px" Text="Add Card" Width="131px" OnClick="btnSubmit_Click" />
-
-
-
-
-
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="btnCancel" runat="server" Font-Names="Century Gothic" Font-Size="Large" Height="49px" Text="Cancel" Width="131px" OnClick="btnCancel_Click" />
+            </div>
             <br />
-           
 
             <div class="floating-box">
                  <asp:Label ID="lblTransactionError" runat="server"></asp:Label>
+                </div>
+            </div>
 
 
     </form>

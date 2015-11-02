@@ -16,6 +16,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticeMidterm", "PracticeMidterm\PracticeMidterm.csproj", "{94D60BEC-1EB5-41C5-86ED-18EA3EFB04E5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project3", "Project3\Project3.csproj", "{15F324C2-EE15-47A8-934B-4D2F3A1BE059}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9B180035-9A98-4301-8020-7AAC0B0D5A09} = {9B180035-9A98-4301-8020-7AAC0B0D5A09}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project3WS", "Project3WS\Project3WS.csproj", "{9B180035-9A98-4301-8020-7AAC0B0D5A09}"
 EndProject

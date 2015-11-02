@@ -16,7 +16,7 @@ namespace Project3
 
         protected void btnNewCard_Click(object sender, EventArgs e)
         {
-            Response.Redirect("frmNewCustomer");
+            Response.Redirect("frmNewCard.aspx");
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -27,6 +27,11 @@ namespace Project3
         protected void btnNewTransaction_Click(object sender, EventArgs e)
         {
             Response.Redirect("frmTransaction.aspx");
+        }
+
+        protected void lnkbtnViewAllTransactions_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -8,7 +8,7 @@
     <style type="text/css">
         #form1 {
             height: 345px;
-            width: 1053px;
+            width: 773px;
         }
     </style>
     <link href="CreditCardStyle.css" rel="stylesheet" />
@@ -20,10 +20,16 @@
 
         <br />
         <h1>Home Page</h1>
-        <div class="content" style="height: 228px; width: 1045px">
-            <div class="floating-box">
+        <div class="content" style="height: 319px; width: 765px">
+            <ul style="height: 66px; width: 656px">
+            <asp:LinkButton ID="lnkbtnAddNewCard" runat="server" OnClick="btnNewCard_Click" Height="32px" Width="184px">Add New Card</asp:LinkButton>
+                <asp:LinkButton ID="lnkbtnNewTransaction" runat="server" Height="32px" OnClick="btnNewTransaction_Click">New Transaction</asp:LinkButton>
+                <asp:LinkButton ID="lnkbtnViewAllTransactions" runat="server" Height="32px" OnClick="lnkbtnViewAllTransactions_Click" Width="283px">View All Transactions</asp:LinkButton>
 
-                <asp:Button ID="btnNewTransaction" runat="server" Font-Names="Century Gothic" Height="36px" OnClick="btnNewTransaction_Click" Text="New Transaction" Width="201px" />
+            </ul>
+            <div class="box">
+
+                <asp:Button class ID="btnNewTransaction" runat="server" Font-Names="Century Gothic" Height="36px" OnClick="btnNewTransaction_Click" Text="New Transaction" Width="201px" />
 
             </div>
 
