@@ -27,26 +27,32 @@ namespace Project3
            int CSV;
            int expMonth;
            int expYear;
+           double transactionAmt;
+           DateTime dateTime = DateTime.Now;
 
            //conditions
            bool validCardNumber = float.TryParse(txtCardNumber.Text,out cardNumber);
            bool validCSV = int.TryParse(txtCSV.Text, out CSV);
            bool validExpMonth = int.TryParse(ddlExpMonth.SelectedValue, out expMonth);
            bool validExpYear = int.TryParse(ddlExpYear.SelectedValue, out expYear);
+           bool validTransactionAmt = double.TryParse(txtAmount.Text, out transactionAmt);
 
-           if (validCardNumber && validExpMonth && validExpYear && validCSV)
+           if (validCardNumber && validExpMonth && validExpYear && validCSV && validTransactionAmt)
            {
                cardNumber = float.Parse(txtCardNumber.Text);
                expMonth = Int32.Parse(ddlExpMonth.SelectedValue);
                expYear = Int32.Parse(ddlExpYear.SelectedValue);
                CSV = Int32.Parse(txtCSV.Text);
+
                Application.Lock();
-               {
+               
                    //pass amount
                    //return value to determine if it was successful
+                   CreditCardWSRef.CreditCardWS pxy = new CreditCardWSRef.CreditCardWS();
+                   pxy.Transaction(name, cardNumber, expMonth, expYear, CSV, transactionAmt);
 
-               }//end of Application.Lock()
-               CreditCardWSRef.CreditCardWS pxy = new CreditCardWSRef.CreditCardWS();
+                Application.UnLock();
+             
            }
 
         }//end of btnSubmit event

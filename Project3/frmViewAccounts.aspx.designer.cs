@@ -10,7 +10,7 @@
 namespace Project3 {
     
     
-    public partial class frmHome {
+    public partial class frmViewAccounts {
         
         /// <summary>
         /// form1 control.
@@ -22,31 +22,13 @@ namespace Project3 {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// lnkbtnAddNewCard control.
+        /// lnkbtnHome control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkbtnAddNewCard;
-        
-        /// <summary>
-        /// lnkbtnNewTransaction control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkbtnNewTransaction;
-        
-        /// <summary>
-        /// lnkbtnViewAllTransactions control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkbtnViewAllTransactions;
+        protected global::System.Web.UI.WebControls.LinkButton lnkbtnHome;
         
         /// <summary>
         /// lnkbtnViewAllAccounts control.
@@ -56,5 +38,14 @@ namespace Project3 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lnkbtnViewAllAccounts;
+        
+        /// <summary>
+        /// gvAccounts control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvAccounts;
     }
 }

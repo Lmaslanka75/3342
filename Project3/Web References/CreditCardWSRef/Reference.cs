@@ -20,6 +20,7 @@ namespace Project3.CreditCardWSRef {
     using System.Web.Services.Protocols;
     using System.Xml.Serialization;
     using System.ComponentModel;
+    using System.Data;
     
     
     /// <remarks/>
@@ -35,11 +36,29 @@ namespace Project3.CreditCardWSRef {
         
         private System.Threading.SendOrPostCallback getCreditCardCountOperationCompleted;
         
+        private System.Threading.SendOrPostCallback TransactionOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getAccountBalanceOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback addTransactionLogOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetAccountsOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback updateNameOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback updateCardNumberOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback UpdateExpMonthOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback UpdateExpYearOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback UpdateCSVOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
         public CreditCardWS() {
-//            this.Url = global::Project3.Properties.Settings.Default.Project3_localhost_CreditCardWS;
+            this.Url = global::Project3.Properties.Settings.Default.Project3_CreditCardWSRef_CreditCardWS;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;
@@ -81,6 +100,33 @@ namespace Project3.CreditCardWSRef {
         
         /// <remarks/>
         public event getCreditCardCountCompletedEventHandler getCreditCardCountCompleted;
+        
+        /// <remarks/>
+        public event TransactionCompletedEventHandler TransactionCompleted;
+        
+        /// <remarks/>
+        public event getAccountBalanceCompletedEventHandler getAccountBalanceCompleted;
+        
+        /// <remarks/>
+        public event addTransactionLogCompletedEventHandler addTransactionLogCompleted;
+        
+        /// <remarks/>
+        public event GetAccountsCompletedEventHandler GetAccountsCompleted;
+        
+        /// <remarks/>
+        public event updateNameCompletedEventHandler updateNameCompleted;
+        
+        /// <remarks/>
+        public event updateCardNumberCompletedEventHandler updateCardNumberCompleted;
+        
+        /// <remarks/>
+        public event UpdateExpMonthCompletedEventHandler UpdateExpMonthCompleted;
+        
+        /// <remarks/>
+        public event UpdateExpYearCompletedEventHandler UpdateExpYearCompleted;
+        
+        /// <remarks/>
+        public event UpdateCSVCompletedEventHandler UpdateCSVCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/AddCustomer", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -170,6 +216,293 @@ namespace Project3.CreditCardWSRef {
             if ((this.getCreditCardCountCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.getCreditCardCountCompleted(this, new getCreditCardCountCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Transaction", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool Transaction(string name, float cardNumber, int expMonth, int expYear, int CSV, double transactionAmt) {
+            object[] results = this.Invoke("Transaction", new object[] {
+                        name,
+                        cardNumber,
+                        expMonth,
+                        expYear,
+                        CSV,
+                        transactionAmt});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void TransactionAsync(string name, float cardNumber, int expMonth, int expYear, int CSV, double transactionAmt) {
+            this.TransactionAsync(name, cardNumber, expMonth, expYear, CSV, transactionAmt, null);
+        }
+        
+        /// <remarks/>
+        public void TransactionAsync(string name, float cardNumber, int expMonth, int expYear, int CSV, double transactionAmt, object userState) {
+            if ((this.TransactionOperationCompleted == null)) {
+                this.TransactionOperationCompleted = new System.Threading.SendOrPostCallback(this.OnTransactionOperationCompleted);
+            }
+            this.InvokeAsync("Transaction", new object[] {
+                        name,
+                        cardNumber,
+                        expMonth,
+                        expYear,
+                        CSV,
+                        transactionAmt}, this.TransactionOperationCompleted, userState);
+        }
+        
+        private void OnTransactionOperationCompleted(object arg) {
+            if ((this.TransactionCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.TransactionCompleted(this, new TransactionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/getAccountBalance", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public decimal getAccountBalance(string name, float cardNumber) {
+            object[] results = this.Invoke("getAccountBalance", new object[] {
+                        name,
+                        cardNumber});
+            return ((decimal)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getAccountBalanceAsync(string name, float cardNumber) {
+            this.getAccountBalanceAsync(name, cardNumber, null);
+        }
+        
+        /// <remarks/>
+        public void getAccountBalanceAsync(string name, float cardNumber, object userState) {
+            if ((this.getAccountBalanceOperationCompleted == null)) {
+                this.getAccountBalanceOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetAccountBalanceOperationCompleted);
+            }
+            this.InvokeAsync("getAccountBalance", new object[] {
+                        name,
+                        cardNumber}, this.getAccountBalanceOperationCompleted, userState);
+        }
+        
+        private void OngetAccountBalanceOperationCompleted(object arg) {
+            if ((this.getAccountBalanceCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getAccountBalanceCompleted(this, new getAccountBalanceCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/addTransactionLog", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void addTransactionLog(string name, float cardNumber, int expMonth, int expYear, int CSV, decimal balance, decimal transactionAmt) {
+            this.Invoke("addTransactionLog", new object[] {
+                        name,
+                        cardNumber,
+                        expMonth,
+                        expYear,
+                        CSV,
+                        balance,
+                        transactionAmt});
+        }
+        
+        /// <remarks/>
+        public void addTransactionLogAsync(string name, float cardNumber, int expMonth, int expYear, int CSV, decimal balance, decimal transactionAmt) {
+            this.addTransactionLogAsync(name, cardNumber, expMonth, expYear, CSV, balance, transactionAmt, null);
+        }
+        
+        /// <remarks/>
+        public void addTransactionLogAsync(string name, float cardNumber, int expMonth, int expYear, int CSV, decimal balance, decimal transactionAmt, object userState) {
+            if ((this.addTransactionLogOperationCompleted == null)) {
+                this.addTransactionLogOperationCompleted = new System.Threading.SendOrPostCallback(this.OnaddTransactionLogOperationCompleted);
+            }
+            this.InvokeAsync("addTransactionLog", new object[] {
+                        name,
+                        cardNumber,
+                        expMonth,
+                        expYear,
+                        CSV,
+                        balance,
+                        transactionAmt}, this.addTransactionLogOperationCompleted, userState);
+        }
+        
+        private void OnaddTransactionLogOperationCompleted(object arg) {
+            if ((this.addTransactionLogCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.addTransactionLogCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetAccounts", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataSet GetAccounts() {
+            object[] results = this.Invoke("GetAccounts", new object[0]);
+            return ((System.Data.DataSet)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetAccountsAsync() {
+            this.GetAccountsAsync(null);
+        }
+        
+        /// <remarks/>
+        public void GetAccountsAsync(object userState) {
+            if ((this.GetAccountsOperationCompleted == null)) {
+                this.GetAccountsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetAccountsOperationCompleted);
+            }
+            this.InvokeAsync("GetAccounts", new object[0], this.GetAccountsOperationCompleted, userState);
+        }
+        
+        private void OnGetAccountsOperationCompleted(object arg) {
+            if ((this.GetAccountsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetAccountsCompleted(this, new GetAccountsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/updateName", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void updateName(string name, int AccountID) {
+            this.Invoke("updateName", new object[] {
+                        name,
+                        AccountID});
+        }
+        
+        /// <remarks/>
+        public void updateNameAsync(string name, int AccountID) {
+            this.updateNameAsync(name, AccountID, null);
+        }
+        
+        /// <remarks/>
+        public void updateNameAsync(string name, int AccountID, object userState) {
+            if ((this.updateNameOperationCompleted == null)) {
+                this.updateNameOperationCompleted = new System.Threading.SendOrPostCallback(this.OnupdateNameOperationCompleted);
+            }
+            this.InvokeAsync("updateName", new object[] {
+                        name,
+                        AccountID}, this.updateNameOperationCompleted, userState);
+        }
+        
+        private void OnupdateNameOperationCompleted(object arg) {
+            if ((this.updateNameCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.updateNameCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/updateCardNumber", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void updateCardNumber(float cardNumber, int AccountID) {
+            this.Invoke("updateCardNumber", new object[] {
+                        cardNumber,
+                        AccountID});
+        }
+        
+        /// <remarks/>
+        public void updateCardNumberAsync(float cardNumber, int AccountID) {
+            this.updateCardNumberAsync(cardNumber, AccountID, null);
+        }
+        
+        /// <remarks/>
+        public void updateCardNumberAsync(float cardNumber, int AccountID, object userState) {
+            if ((this.updateCardNumberOperationCompleted == null)) {
+                this.updateCardNumberOperationCompleted = new System.Threading.SendOrPostCallback(this.OnupdateCardNumberOperationCompleted);
+            }
+            this.InvokeAsync("updateCardNumber", new object[] {
+                        cardNumber,
+                        AccountID}, this.updateCardNumberOperationCompleted, userState);
+        }
+        
+        private void OnupdateCardNumberOperationCompleted(object arg) {
+            if ((this.updateCardNumberCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.updateCardNumberCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/UpdateExpMonth", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void UpdateExpMonth(int expMonth, int AccountID) {
+            this.Invoke("UpdateExpMonth", new object[] {
+                        expMonth,
+                        AccountID});
+        }
+        
+        /// <remarks/>
+        public void UpdateExpMonthAsync(int expMonth, int AccountID) {
+            this.UpdateExpMonthAsync(expMonth, AccountID, null);
+        }
+        
+        /// <remarks/>
+        public void UpdateExpMonthAsync(int expMonth, int AccountID, object userState) {
+            if ((this.UpdateExpMonthOperationCompleted == null)) {
+                this.UpdateExpMonthOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUpdateExpMonthOperationCompleted);
+            }
+            this.InvokeAsync("UpdateExpMonth", new object[] {
+                        expMonth,
+                        AccountID}, this.UpdateExpMonthOperationCompleted, userState);
+        }
+        
+        private void OnUpdateExpMonthOperationCompleted(object arg) {
+            if ((this.UpdateExpMonthCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.UpdateExpMonthCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/UpdateExpYear", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void UpdateExpYear(int expYear, int AccountID) {
+            this.Invoke("UpdateExpYear", new object[] {
+                        expYear,
+                        AccountID});
+        }
+        
+        /// <remarks/>
+        public void UpdateExpYearAsync(int expYear, int AccountID) {
+            this.UpdateExpYearAsync(expYear, AccountID, null);
+        }
+        
+        /// <remarks/>
+        public void UpdateExpYearAsync(int expYear, int AccountID, object userState) {
+            if ((this.UpdateExpYearOperationCompleted == null)) {
+                this.UpdateExpYearOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUpdateExpYearOperationCompleted);
+            }
+            this.InvokeAsync("UpdateExpYear", new object[] {
+                        expYear,
+                        AccountID}, this.UpdateExpYearOperationCompleted, userState);
+        }
+        
+        private void OnUpdateExpYearOperationCompleted(object arg) {
+            if ((this.UpdateExpYearCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.UpdateExpYearCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/UpdateCSV", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void UpdateCSV(int CSV, int AccountID) {
+            this.Invoke("UpdateCSV", new object[] {
+                        CSV,
+                        AccountID});
+        }
+        
+        /// <remarks/>
+        public void UpdateCSVAsync(int CSV, int AccountID) {
+            this.UpdateCSVAsync(CSV, AccountID, null);
+        }
+        
+        /// <remarks/>
+        public void UpdateCSVAsync(int CSV, int AccountID, object userState) {
+            if ((this.UpdateCSVOperationCompleted == null)) {
+                this.UpdateCSVOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUpdateCSVOperationCompleted);
+            }
+            this.InvokeAsync("UpdateCSV", new object[] {
+                        CSV,
+                        AccountID}, this.UpdateCSVOperationCompleted, userState);
+        }
+        
+        private void OnUpdateCSVOperationCompleted(object arg) {
+            if ((this.UpdateCSVCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.UpdateCSVCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -306,6 +639,108 @@ namespace Project3.CreditCardWSRef {
             }
         }
     }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.33440")]
+    public delegate void TransactionCompletedEventHandler(object sender, TransactionCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.33440")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class TransactionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal TransactionCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.33440")]
+    public delegate void getAccountBalanceCompletedEventHandler(object sender, getAccountBalanceCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.33440")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getAccountBalanceCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getAccountBalanceCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public decimal Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((decimal)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.33440")]
+    public delegate void addTransactionLogCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.33440")]
+    public delegate void GetAccountsCompletedEventHandler(object sender, GetAccountsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.33440")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetAccountsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetAccountsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataSet Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataSet)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.33440")]
+    public delegate void updateNameCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.33440")]
+    public delegate void updateCardNumberCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.33440")]
+    public delegate void UpdateExpMonthCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.33440")]
+    public delegate void UpdateExpYearCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.33440")]
+    public delegate void UpdateCSVCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
 }
 
 #pragma warning restore 1591

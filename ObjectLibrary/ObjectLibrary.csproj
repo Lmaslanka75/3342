@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="CreditCard.cs" />
     <Compile Include="Customer.cs" />
+    <Compile Include="ErrorCode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

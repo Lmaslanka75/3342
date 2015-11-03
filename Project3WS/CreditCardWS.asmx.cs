@@ -77,15 +77,16 @@ namespace Project3WS
 
 
         [WebMethod]
-        public void Transaction(string name, float cardNumber, double transactionAmt)
+        public bool Transaction(string name, float cardNumber,int expMonth, int expYear, int CSV, double transactionAmt)
         {
-     
+            bool returnval;
+
             //get Account Balance
             decimal balance = getAccountBalance(name, cardNumber);
             decimal transaction = decimal.Parse(transactionAmt.ToString());  
 
             //if balance is greater than transaction amount, do the transaction
-            if (balance > transaction) 
+            if (balance > transaction)
             {
                 //Update Account balance using stored procedure 
                 DBConnect objdb = new DBConnect();
@@ -93,17 +94,22 @@ namespace Project3WS
                 sqlCommand.CommandType = CommandType.StoredProcedure;
                 sqlCommand.CommandText = "UpdateAccountBalance";
                 sqlCommand.Parameters.AddWithValue("@CardNumber", cardNumber);
-                sqlCommand.Parameters.AddWithValue("@Balance", balance);
                 sqlCommand.Parameters.AddWithValue("@TransactionAmount", transactionAmt);
                 objdb.DoUpdateUsingCmdObj(sqlCommand);  //execute update
 
                 //create a log of the transaction
-                //addTransactionLog();
-
-
+                addTransactionLog(name, cardNumber, expMonth, expYear, CSV, balance, transaction);
+                returnval = true;
             }
 
+            else 
+            {
+                returnval = false;
+            }
+
+            return returnval;
         }//end of transaction method
+
 
 
         //method to get account balance
@@ -146,15 +152,82 @@ namespace Project3WS
             sqlCommand.Parameters.AddWithValue("@ExpYear", expYear);
             sqlCommand.Parameters.AddWithValue("@CSV", CSV);
             sqlCommand.Parameters.AddWithValue("@Balance", balance);
-           // sqlCommand.Parameters.AddWithValue("@tstamp", );
-           //addbalance
-            //add timestamp
             sqlCommand.Parameters.AddWithValue("@TransactionAmount", transactionAmt);
-
 
             objdb.DoUpdateUsingCmdObj(sqlCommand);
 
         }//end of doTransaction() method
+
+        [WebMethod]
+        public DataSet GetAccounts()
+        {
+            DBConnect objdb = new DBConnect();
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.CommandText = "GetAllAccounts";
+            DataSet dataset = objdb.GetDataSetUsingCmdObj(sqlCommand);
+            return dataset;
+        }
+
+        [WebMethod]
+        public void updateName(string name, int AccountID)
+        {
+            DBConnect objdb = new DBConnect();
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.CommandText = "UpdateAccountName";
+            sqlCommand.Parameters.AddWithValue("@Name", name);
+            sqlCommand.Parameters.AddWithValue("@AccountID", AccountID);
+            objdb.DoUpdateUsingCmdObj(sqlCommand);
+        }
+
+        [WebMethod]
+        public void updateCardNumber(float cardNumber, int AccountID)
+        {
+            DBConnect objdb = new DBConnect();
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.CommandText = "UpdateCardNumber";
+            sqlCommand.Parameters.AddWithValue("@CardNumber", cardNumber);
+            sqlCommand.Parameters.AddWithValue("@AccountID", AccountID);
+            objdb.DoUpdateUsingCmdObj(sqlCommand);
+        }
+
+        [WebMethod]
+        public void UpdateExpMonth(int expMonth, int AccountID)
+        {
+            DBConnect objdb = new DBConnect();
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.CommandText = "UpdateExpMonth";
+            sqlCommand.Parameters.AddWithValue("@ExpMonth", expMonth);
+            sqlCommand.Parameters.AddWithValue("@AccountID", AccountID);
+            objdb.DoUpdateUsingCmdObj(sqlCommand);
+        }
+
+        [WebMethod]
+        public void UpdateExpYear(int expYear, int AccountID)
+        {
+            DBConnect objdb = new DBConnect();
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.CommandText = "UpdateExpYear";
+            sqlCommand.Parameters.AddWithValue("@ExpYear", expYear);
+            sqlCommand.Parameters.AddWithValue("@AccountID", AccountID);
+            objdb.DoUpdateUsingCmdObj(sqlCommand);
+        }
+
+        [WebMethod]
+        public void UpdateCSV(int CSV, int AccountID)
+        {
+            DBConnect objdb = new DBConnect();
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.CommandText = "UpdateCSV";
+            sqlCommand.Parameters.AddWithValue("@CSV", CSV);
+            sqlCommand.Parameters.AddWithValue("@AccountID", AccountID);
+            objdb.DoUpdateUsingCmdObj(sqlCommand);
+        }
 
 
 

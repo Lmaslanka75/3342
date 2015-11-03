@@ -46,6 +46,128 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="Transaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="cardNumber" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="expMonth" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="expYear" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CSV" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="transactionAmt" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TransactionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAccountBalance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="cardNumber" type="s:float" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAccountBalanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getAccountBalanceResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addTransactionLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="cardNumber" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="expMonth" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="expYear" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CSV" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="balance" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="transactionAmt" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addTransactionLogResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAccounts">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAccountsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAccountsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="AccountID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateNameResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="updateCardNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cardNumber" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="AccountID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateCardNumberResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateExpMonth">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="expMonth" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="AccountID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateExpMonthResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateExpYear">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="expYear" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="AccountID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateExpYearResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateCSV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CSV" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="AccountID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCSVResponse">
+        <s:complexType />
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="AddCustomerSoapIn">
@@ -66,6 +188,60 @@
   <wsdl:message name="getCreditCardCountSoapOut">
     <wsdl:part name="parameters" element="tns:getCreditCardCountResponse" />
   </wsdl:message>
+  <wsdl:message name="TransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:Transaction" />
+  </wsdl:message>
+  <wsdl:message name="TransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:TransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAccountBalanceSoapIn">
+    <wsdl:part name="parameters" element="tns:getAccountBalance" />
+  </wsdl:message>
+  <wsdl:message name="getAccountBalanceSoapOut">
+    <wsdl:part name="parameters" element="tns:getAccountBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="addTransactionLogSoapIn">
+    <wsdl:part name="parameters" element="tns:addTransactionLog" />
+  </wsdl:message>
+  <wsdl:message name="addTransactionLogSoapOut">
+    <wsdl:part name="parameters" element="tns:addTransactionLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccounts" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateNameSoapIn">
+    <wsdl:part name="parameters" element="tns:updateName" />
+  </wsdl:message>
+  <wsdl:message name="updateNameSoapOut">
+    <wsdl:part name="parameters" element="tns:updateNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateCardNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:updateCardNumber" />
+  </wsdl:message>
+  <wsdl:message name="updateCardNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:updateCardNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateExpMonthSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateExpMonth" />
+  </wsdl:message>
+  <wsdl:message name="UpdateExpMonthSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateExpMonthResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateExpYearSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateExpYear" />
+  </wsdl:message>
+  <wsdl:message name="UpdateExpYearSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateExpYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCSVSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCSV" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCSVSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCSVResponse" />
+  </wsdl:message>
   <wsdl:portType name="CreditCardWSSoap">
     <wsdl:operation name="AddCustomer">
       <wsdl:input message="tns:AddCustomerSoapIn" />
@@ -78,6 +254,42 @@
     <wsdl:operation name="getCreditCardCount">
       <wsdl:input message="tns:getCreditCardCountSoapIn" />
       <wsdl:output message="tns:getCreditCardCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction">
+      <wsdl:input message="tns:TransactionSoapIn" />
+      <wsdl:output message="tns:TransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAccountBalance">
+      <wsdl:input message="tns:getAccountBalanceSoapIn" />
+      <wsdl:output message="tns:getAccountBalanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addTransactionLog">
+      <wsdl:input message="tns:addTransactionLogSoapIn" />
+      <wsdl:output message="tns:addTransactionLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccounts">
+      <wsdl:input message="tns:GetAccountsSoapIn" />
+      <wsdl:output message="tns:GetAccountsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateName">
+      <wsdl:input message="tns:updateNameSoapIn" />
+      <wsdl:output message="tns:updateNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateCardNumber">
+      <wsdl:input message="tns:updateCardNumberSoapIn" />
+      <wsdl:output message="tns:updateCardNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateExpMonth">
+      <wsdl:input message="tns:UpdateExpMonthSoapIn" />
+      <wsdl:output message="tns:UpdateExpMonthSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateExpYear">
+      <wsdl:input message="tns:UpdateExpYearSoapIn" />
+      <wsdl:output message="tns:UpdateExpYearSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCSV">
+      <wsdl:input message="tns:UpdateCSVSoapIn" />
+      <wsdl:output message="tns:UpdateCSVSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="CreditCardWSSoap" type="tns:CreditCardWSSoap">
@@ -109,6 +321,87 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Transaction">
+      <soap:operation soapAction="http://tempuri.org/Transaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAccountBalance">
+      <soap:operation soapAction="http://tempuri.org/getAccountBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addTransactionLog">
+      <soap:operation soapAction="http://tempuri.org/addTransactionLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccounts">
+      <soap:operation soapAction="http://tempuri.org/GetAccounts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateName">
+      <soap:operation soapAction="http://tempuri.org/updateName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateCardNumber">
+      <soap:operation soapAction="http://tempuri.org/updateCardNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateExpMonth">
+      <soap:operation soapAction="http://tempuri.org/UpdateExpMonth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateExpYear">
+      <soap:operation soapAction="http://tempuri.org/UpdateExpYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCSV">
+      <soap:operation soapAction="http://tempuri.org/UpdateCSV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="CreditCardWSSoap12" type="tns:CreditCardWSSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -132,6 +425,87 @@
     </wsdl:operation>
     <wsdl:operation name="getCreditCardCount">
       <soap12:operation soapAction="http://tempuri.org/getCreditCardCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction">
+      <soap12:operation soapAction="http://tempuri.org/Transaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAccountBalance">
+      <soap12:operation soapAction="http://tempuri.org/getAccountBalance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addTransactionLog">
+      <soap12:operation soapAction="http://tempuri.org/addTransactionLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccounts">
+      <soap12:operation soapAction="http://tempuri.org/GetAccounts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateName">
+      <soap12:operation soapAction="http://tempuri.org/updateName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateCardNumber">
+      <soap12:operation soapAction="http://tempuri.org/updateCardNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateExpMonth">
+      <soap12:operation soapAction="http://tempuri.org/UpdateExpMonth" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateExpYear">
+      <soap12:operation soapAction="http://tempuri.org/UpdateExpYear" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCSV">
+      <soap12:operation soapAction="http://tempuri.org/UpdateCSV" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

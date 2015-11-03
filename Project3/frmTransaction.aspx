@@ -20,25 +20,26 @@
 </head>
 <body style="height: 692px; width: 909px;">
     <form id="form1" runat="server">
-    <div style="height: 0px">
+    <div style="height: 15px">
     
-    <h1>Payment Transaction</h1>
+   
     </div>
-        <div class="content" style="height: 431px; width: 828px">
+         <h1>Payment Transaction</h1>
+        <div class="content" style="height: 523px; width: 828px">
             <div class ="floating-box">
         <asp:Label ID="Label1" runat="server" Text="Name on Card"></asp:Label>
 &nbsp;
         <asp:TextBox ID="txtNameOnCard" runat="server" Width="366px"></asp:TextBox>
     </div>
-            
-
-
-  
-        <div class="floating-box">
+                <div class="floating-box">
             <asp:Label ID="lblcardNumber" runat="server" Text="Card Number"></asp:Label>
             &nbsp; &nbsp;<asp:TextBox ID="txtCardNumber" runat="server" Width="251px" TextMode="Number" MaxLength="15"></asp:TextBox>
             &nbsp;&nbsp;&nbsp;
             </div>
+            
+
+
+  
             <div class="floating-box">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
                 <asp:Label ID="lblCity" runat="server" Text="Expires:"></asp:Label>
@@ -116,17 +117,28 @@
 
 
 
-            <asp:Button ID="btnSubmit" runat="server" Font-Names="Century Gothic" Font-Size="Large" Height="49px" Text="Submit" Width="131px" OnClick="btnSubmit_Click" />
-
-
-
-
-
             <br />
            
             <div class="floating-box">
                  <asp:Label ID="lblTransactionError" runat="server"></asp:Label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:Button ID="btnSubmit" runat="server" position="absolute" Font-Names="Century Gothic" Font-Size="Large" Height="49px" Text="Submit" Width="131px" OnClick="btnSubmit_Click" />
+
                 </div>
+
+
+
+  
+    
+
+
+
+
+
+
+
+
+
 
             </div>
 

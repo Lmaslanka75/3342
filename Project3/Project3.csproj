@@ -65,6 +65,7 @@
     <Content Include="frmNewCard.aspx" />
     <Content Include="frmNewCustomer.aspx" />
     <Content Include="frmTransaction.aspx" />
+    <Content Include="frmViewAccounts.aspx" />
     <Content Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -107,6 +108,13 @@
     </Compile>
     <Compile Include="frmTransaction.aspx.designer.cs">
       <DependentUpon>frmTransaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmViewAccounts.aspx.cs">
+      <DependentUpon>frmViewAccounts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmViewAccounts.aspx.designer.cs">
+      <DependentUpon>frmViewAccounts.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">

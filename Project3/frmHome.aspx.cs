@@ -34,5 +34,10 @@ namespace Project3
             //load a gridview of transactions
 
         }
+
+        protected void lnkbtnViewAllAccounts_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frmViewAccounts.aspx");
+        }
     }
 }

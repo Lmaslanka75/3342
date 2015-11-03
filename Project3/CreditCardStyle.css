@@ -1,17 +1,17 @@
 ﻿body 
 {
     font-family:'Century Gothic';
-    width: 776px;
+    width: 1110px;
     height: 669px;
     margin-right: 18px;
-    margin-top: 31px;
+    margin-top: 14px;
 }
 
 
 .floating-box {
     float: left;
     width: 501px;
-    height: 48px;
+    height: 54px;
     margin: 5px;
 }
 
@@ -19,7 +19,7 @@
 {
     background-color:#c2e9e9;
     height: 323px;
-    width: 1034px;
+    width: 1064px;
     display:inline-block;
     
 }
@@ -27,8 +27,9 @@
 h1 
 {
     text-align:center;
-    width: 763px;
+    width: 867px;
     height: 45px;
+    top: 50px;
 }
 
 .box {
@@ -61,5 +62,7 @@ a:hover, a:active {
 
 ul 
 { 
-   display:inline-block; 
+   display:inline-block;
+    width: 613px;
+    height: 50px;
 }
