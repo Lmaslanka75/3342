@@ -135,6 +135,7 @@
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Properties\PublishProfiles\3342.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -159,10 +160,10 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://localhost:3321/CreditCardWS.asmx">
+    <WebReferenceUrl Include="http://cis-iis2.temple.edu/Fall2015/CIS3342_tuc52228/Project3WS/CreditCardWS.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\CreditCardWSRef\</RelPath>
-      <UpdateFromURL>http://localhost:3321/CreditCardWS.asmx</UpdateFromURL>
+      <UpdateFromURL>http://cis-iis2.temple.edu/Fall2015/CIS3342_tuc52228/Project3WS/CreditCardWS.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>

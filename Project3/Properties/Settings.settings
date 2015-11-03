@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="Project3_CreditCardWSRef_CreditCardWS" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://localhost:3321/CreditCardWS.asmx</Value>
+      <Value Profile="(Default)">http://cis-iis2.temple.edu/Fall2015/CIS3342_tuc52228/Project3WS/CreditCardWS.asmx</Value>
     </Setting>
   </Settings>
 </SettingsFile>

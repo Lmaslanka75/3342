@@ -26,7 +26,8 @@ namespace Project3.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:3321/CreditCardWS.asmx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://cis-iis2.temple.edu/Fall2015/CIS3342_tuc52228/Project3WS/CreditCardWS.asmx" +
+            "")]
         public string Project3_CreditCardWSRef_CreditCardWS {
             get {
                 return ((string)(this["Project3_CreditCardWSRef_CreditCardWS"]));
