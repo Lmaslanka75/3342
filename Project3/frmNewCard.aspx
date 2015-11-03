@@ -9,6 +9,7 @@
     <style type="text/css">
         #form1 {
             margin-top: 15px;
+            height: 828px;
         }
     </style>
 </head>
@@ -19,7 +20,10 @@
         <br />
     <h1>Add New Credit Card</h1>
    
-        <div class="content" style="height: 532px; width: 833px; margin-top: 0px;">
+        <div class="content" style="height: 677px; width: 958px; margin-top: 0px;">
+           
+            <br />
+            <br />
            
             <div class ="floating-box">
             <asp:Label ID="Label1" runat="server" Text="Name on Card"></asp:Label>&nbsp;
@@ -103,8 +107,10 @@
             
             <div class ="floating-box">
                 <asp:Button ID="btnAddCard" runat="server" Font-Names="Century Gothic" Font-Size="Large" Height="49px" Text="Add Card" Width="131px" OnClick="btnSubmit_Click" />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Button ID="btnCancel" runat="server" Font-Names="Century Gothic" Font-Size="Large" Height="49px" Text="Cancel" Width="131px" OnClick="btnCancel_Click" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="btnHome" runat="server" Font-Names="Century Gothic" Font-Size="Large" Height="49px" Text="Home" Width="131px" OnClick="btnHome_Click" />
             </div>
 
             <div class="floating-box">

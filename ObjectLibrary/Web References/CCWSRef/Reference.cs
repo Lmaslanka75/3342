@@ -13,7 +13,7 @@
 // 
 #pragma warning disable 1591
 
-namespace Project3.CreditCardWSRef {
+namespace ObjectLibrary.CCWSRef {
     using System;
     using System.Web.Services;
     using System.Diagnostics;
@@ -54,13 +54,11 @@ namespace Project3.CreditCardWSRef {
         
         private System.Threading.SendOrPostCallback UpdateCSVOperationCompleted;
         
-        private System.Threading.SendOrPostCallback getAllTransactionsOperationCompleted;
-        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
         public CreditCardWS() {
-            this.Url = global::Project3.Properties.Settings.Default.Project3_CreditCardWSRef_CreditCardWS;
+            this.Url = global::ObjectLibrary.Properties.Settings.Default.ObjectLibrary_CCWSRef_CreditCardWS;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;
@@ -129,9 +127,6 @@ namespace Project3.CreditCardWSRef {
         
         /// <remarks/>
         public event UpdateCSVCompletedEventHandler UpdateCSVCompleted;
-        
-        /// <remarks/>
-        public event getAllTransactionsCompletedEventHandler getAllTransactionsCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/AddCustomer", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -512,33 +507,6 @@ namespace Project3.CreditCardWSRef {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/getAllTransactions", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public System.Data.DataSet getAllTransactions() {
-            object[] results = this.Invoke("getAllTransactions", new object[0]);
-            return ((System.Data.DataSet)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getAllTransactionsAsync() {
-            this.getAllTransactionsAsync(null);
-        }
-        
-        /// <remarks/>
-        public void getAllTransactionsAsync(object userState) {
-            if ((this.getAllTransactionsOperationCompleted == null)) {
-                this.getAllTransactionsOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetAllTransactionsOperationCompleted);
-            }
-            this.InvokeAsync("getAllTransactions", new object[0], this.getAllTransactionsOperationCompleted, userState);
-        }
-        
-        private void OngetAllTransactionsOperationCompleted(object arg) {
-            if ((this.getAllTransactionsCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getAllTransactionsCompleted(this, new getAllTransactionsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -773,32 +741,6 @@ namespace Project3.CreditCardWSRef {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.33440")]
     public delegate void UpdateCSVCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.33440")]
-    public delegate void getAllTransactionsCompletedEventHandler(object sender, getAllTransactionsCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.33440")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getAllTransactionsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal getAllTransactionsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.Data.DataSet Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataSet)(this.results[0]));
-            }
-        }
-    }
 }
 
 #pragma warning restore 1591

@@ -20,7 +20,7 @@ namespace UtilitiesLibrary
         public DBConnect()
         {
             myConnectionSql = new SqlConnection(SqlConnectString);
-           // myConnectionSql.Open();
+            myConnectionSql.Open();
 
         }
 
@@ -182,10 +182,10 @@ namespace UtilitiesLibrary
             return myConnectionSql;
         }
 
-        public void CloseConnection()
-        {
-            myConnectionSql.Close();
-        }
+        //public void CloseConnection()
+        //{
+        //    myConnectionSql.Close();
+        //}
 
         public void ResetConnection()
         {

@@ -77,10 +77,9 @@ namespace Project3WS
 
 
         [WebMethod]
-        public bool Transaction(string name, float cardNumber,int expMonth, int expYear, int CSV, double transactionAmt)
+        public int Transaction(string name, float cardNumber,int expMonth, int expYear, int CSV, double transactionAmt)
         {
-            bool returnval;
-
+            int returnval;
             //get Account Balance
             decimal balance = getAccountBalance(name, cardNumber);
             decimal transaction = decimal.Parse(transactionAmt.ToString());  
@@ -99,12 +98,12 @@ namespace Project3WS
 
                 //create a log of the transaction
                 addTransactionLog(name, cardNumber, expMonth, expYear, CSV, balance, transaction);
-                returnval = true;
+                returnval = 0;
             }
 
             else 
             {
-                returnval = false;
+                returnval = 1;
             }
 
             return returnval;
@@ -228,8 +227,20 @@ namespace Project3WS
             sqlCommand.Parameters.AddWithValue("@AccountID", AccountID);
             objdb.DoUpdateUsingCmdObj(sqlCommand);
         }
+       
+        
+        [WebMethod]
+        public DataSet getAllTransactions()
+        {
+            //Update Account balance using stored procedure 
+            DBConnect objdb = new DBConnect();
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.CommandText = "GetAllTransactions";
+            DataSet dataset = objdb.GetDataSetUsingCmdObj(sqlCommand);
+            return dataset;
 
-
+        }
 
     }//end of CreditCardClass
 

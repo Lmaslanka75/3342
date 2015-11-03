@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 
 namespace Project3
 {
@@ -32,6 +33,10 @@ namespace Project3
         protected void lnkbtnViewAllTransactions_Click(object sender, EventArgs e)
         {
             //load a gridview of transactions
+            CreditCardWSRef.CreditCardWS pxy = new CreditCardWSRef.CreditCardWS();
+           DataSet ds = pxy.getAllTransactions();
+            gvTransactions.DataSource = ds;
+            gvTransactions.DataBind();
 
         }
 

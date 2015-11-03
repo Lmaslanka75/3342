@@ -49,13 +49,13 @@ namespace Project3
             //string accountNumber = gvAccounts.Rows[rowIndex].Cells[1].Text;
 
             // Retrieve a reference to the TextBox in the row for the Name
-             TextBox TBoxName;
+            TextBox TBoxName;
             TBoxName = (TextBox)gvAccounts.Rows[rowIndex].Cells[2].Controls[0];
             string name = TBoxName.Text;
-             pxy.updateName(name,accountID);
+            pxy.updateName(name, accountID);
 
             // Retrieve a reference to the TextBox in the row for the CardNumber
-             TextBox  TBoxCardNum;
+            TextBox TBoxCardNum;
             TBoxCardNum = (TextBox)gvAccounts.Rows[rowIndex].Cells[3].Controls[0];
             float cardnum = float.Parse(TBoxCardNum.Text);
             pxy.updateCardNumber(cardnum, accountID);
@@ -68,13 +68,13 @@ namespace Project3
 
 
             // Retrieve a reference to the TextBox in the row for the expYear
-              TextBox TBoxYear;
+            TextBox TBoxYear;
             TBoxYear = (TextBox)gvAccounts.Rows[rowIndex].Cells[5].Controls[0];
             int expYear = int.Parse(TBoxYear.Text);
-            pxy.UpdateExpYear(expYear,accountID);
+            pxy.UpdateExpYear(expYear, accountID);
 
             // Retrieve a reference to the TextBox in the row for the CSV
-              TextBox TBoxCSV;
+            TextBox TBoxCSV;
             TBoxCSV = (TextBox)gvAccounts.Rows[rowIndex].Cells[6].Controls[0];
             int csv = int.Parse(TBoxCSV.Text);
             pxy.UpdateCSV(csv, accountID);

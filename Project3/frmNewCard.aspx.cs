@@ -59,5 +59,10 @@ namespace Project3
         {
  
         }
+
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frmHome.aspx");
+        }
     }
 }

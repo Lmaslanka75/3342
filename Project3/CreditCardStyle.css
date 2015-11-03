@@ -1,8 +1,8 @@
 ﻿body 
 {
     font-family:'Century Gothic';
-    width: 1110px;
-    height: 669px;
+    width: 1218px;
+    height: 883px;
     margin-right: 18px;
     margin-top: 14px;
 }
@@ -54,6 +54,7 @@ a:link, a:visited
     padding: 4px;
     text-decoration: none;
     text-transform: uppercase;
+    margin-left: 32px;
 }
 
 a:hover, a:active {

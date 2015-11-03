@@ -11,7 +11,6 @@ namespace Project3
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void txtCSV_TextChanged(object sender, EventArgs e)
@@ -44,14 +43,27 @@ namespace Project3
                expYear = Int32.Parse(ddlExpYear.SelectedValue);
                CSV = Int32.Parse(txtCSV.Text);
 
-               Application.Lock();
+              // Application.Lock();
                
                    //pass amount
                    //return value to determine if it was successful
                    CreditCardWSRef.CreditCardWS pxy = new CreditCardWSRef.CreditCardWS();
-                   pxy.Transaction(name, cardNumber, expMonth, expYear, CSV, transactionAmt);
+                   int Result = pxy.Transaction(name, cardNumber, expMonth, expYear, CSV, transactionAmt);
+                   if (Result < 1)
+                   {
+                       lblTransactionError.Text = "Your transaction was successful";
 
-                Application.UnLock();
+                   }
+                   else
+                   {
+                       lblTransactionError.Text = "Your transaction failed";
+                   }
+
+
+                    
+                   
+
+              //  Application.UnLock();
              
            }
 
